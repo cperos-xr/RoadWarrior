@@ -462,8 +462,9 @@ MonoBehaviour:
   scrollRect: {fileID: 6720142822364818559}
   leftButton: {fileID: 660586660331326981}
   rightButton: {fileID: 5825034855667339845}
-  scrollAmount: 0.25
+  content: {fileID: 2918649191329090007}
   scrollSpeed: 0.5
+  items: []
 --- !u!1 &5552560543017811175
 GameObject:
   m_ObjectHideFlags: 0

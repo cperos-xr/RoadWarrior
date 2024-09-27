@@ -8,7 +8,9 @@ public class PopulateContent: MonoBehaviour
     public Transform scrollContent;
     public List<VehiclePart> vehicleParts;
 
-    private void Start()
+    [SerializeField] private ScrollViewController scrollViewController;
+
+    private void Awake()
     {
         PopulateMenu();
     }
@@ -22,6 +24,9 @@ public class PopulateContent: MonoBehaviour
             scrollImage.SetImage(vehiclePart.icon);
             scrollImage.nameText.text = vehiclePart.name;
             scrollImage.part = vehiclePart;
+            scrollViewController.items.Add(newIcon);
         }
+
+        scrollViewController.UpdateScrollAmount();
     }
 }
