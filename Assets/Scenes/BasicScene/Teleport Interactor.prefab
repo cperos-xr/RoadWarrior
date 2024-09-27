@@ -607,8 +607,8 @@ MonoBehaviour:
   m_SmoothMovement: 0
   m_FollowTightness: 10
   m_SnapThresholdDistance: 10
-  m_Reticle: {fileID: 8748868027195207512, guid: 18d45440f85fa1d4798511736f7a964d, type: 3}
-  m_BlockedReticle: {fileID: 3177232254315139758, guid: 486c96f166230e243af5700d2bc6d86c, type: 3}
+  m_Reticle: {fileID: 8748868027195207512, guid: b514e4557caa68842829294a6e3df737, type: 3}
+  m_BlockedReticle: {fileID: 3177232254315139758, guid: 7462a63b36863dc4ea785c2a3fc6100e, type: 3}
   m_StopLineAtFirstRaycastHit: 1
   m_StopLineAtSelection: 0
   m_SnapEndpointIfAvailable: 1

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21b161ba8ba67c2408d421584330241b, type: 3}
+  m_Name: m240b
+  m_EditorClassIdentifier: 
+  partName: m240b
+  icon: {fileID: 2800000, guid: 2f234f765657b694b91b54c1ec90da1a, type: 3}
+  model: {fileID: 848703901476886756, guid: bf8edfeddf9082442845f8e9a6296256, type: 3}
+  weight: 5
+  cost: 5
+  damage: 5
+  range: 5
+  fireRate: 5
+  ammoType: 1
+  mountPoint: 5
