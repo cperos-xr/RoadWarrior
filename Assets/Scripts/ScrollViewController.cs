@@ -20,6 +20,10 @@ public class ScrollViewController : MonoBehaviour
     private bool isScrolling;
     private float scrollAmount; // Dynamic scroll amount
 
+    // a event and delaegate can be added here to notify when the scroll is done
+    public delegate void SelectedObject(VehiclePart selectedPart);
+    public static event SelectedObject OnSelectedVehiclePart;
+
     private void Start()
     {
         // Calculate the scroll amount dynamically based on the number of items
@@ -91,7 +95,7 @@ public class ScrollViewController : MonoBehaviour
     /// <summary>
     /// Updates the active item based on the current scroll position.
     /// </summary>
-    private void UpdateActiveItem()
+    public void UpdateActiveItem()
     {
         // Calculate the width of each item based on the content and number of items
         float contentWidth = content.rect.width;
@@ -109,13 +113,14 @@ public class ScrollViewController : MonoBehaviour
 
         // Access the active item
         GameObject activeItem = items[activeIndex];
-        Debug.Log($"Active Item: {activeItem.name}");
+        Debug.Log($"Active Item: {activeItem.name}", activeItem);
 
         ScrollImage scrollImage = activeItem.GetComponent<ScrollImage>();
         if (scrollImage != null)
         {
             // Perform additional actions based on the active item
             Debug.Log($"Active Item Part: {scrollImage.part.partName}");
+            OnSelectedVehiclePart?.Invoke(scrollImage.part);
         }
         // Perform additional actions if needed, like updating UI or triggering events
     }

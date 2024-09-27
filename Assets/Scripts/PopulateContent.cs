@@ -10,7 +10,7 @@ public class PopulateContent: MonoBehaviour
 
     [SerializeField] private ScrollViewController scrollViewController;
 
-    private void Awake()
+    private void Start()
     {
         PopulateMenu();
     }
@@ -28,5 +28,6 @@ public class PopulateContent: MonoBehaviour
         }
 
         scrollViewController.UpdateScrollAmount();
+        scrollViewController.UpdateActiveItem();
     }
 }

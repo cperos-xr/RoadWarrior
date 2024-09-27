@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1215196805c3a84e96fec4c19e09d34, type: 3}
+  m_Name: Standard
+  m_EditorClassIdentifier: 
+  partName: Standard
+  icon: {fileID: 2800000, guid: efedc2cf1cca91946988fd72d62428b2, type: 3}
+  model: {fileID: 3429420511213102919, guid: ddd0a0cf6789016419bac52934c886cd, type: 3}
+  weight: 20
+  cost: 100
+  hitPoints: 100
+  radius: 0.37
+  topSpeedModifier: 1
+  accelerationModifier: 1
+  wheelDampingRate: 0.25
+  suspensionDistance: 0.3
+  suspensionSpring:
+    spring: 10000
+    damper: 9000
+  forwardFriction:
+    extremumSlip: 0.4
+    extremumValue: 1
+    asymptoteSlip: 0.8
+    asymptoteValue: 0.5
+    stiffness: 1
+  sidewaysFriction:
+    extremumSlip: 0.2
+    extremumValue: 1
+    asymptoteSlip: 0.5
+    asymptoteValue: 0.75
+    stiffness: 1
+  compatibleVehicleTypes: 0100000002000000
