@@ -10,6 +10,16 @@ public class CreatedCarManager : MonoBehaviour
     public Vehicle vehicle;
     public Wheel wheel;
 
+    public Transform vehicleSpawn;
+    public GameObject currentVehicle;
+    public Transform wheelSpawn;
+    public GameObject currentWheels;
+
+    public Transform weaponSpawn;
+    public GameObject currentWeapon;
+
+
+
     private void OnEnable()
     {
         ScrollViewController.OnSelectedVehiclePart += OnSelectedWeapon;
@@ -27,18 +37,34 @@ public class CreatedCarManager : MonoBehaviour
         if (selectedPart is Weapon selectedWeapon)
         {
             weapon = selectedWeapon;
+            if (currentWeapon != null)
+            {
+                Destroy(currentWeapon);
+            }
+            currentWeapon = Instantiate(weapon.model, weaponSpawn);
         }
-        if (selectedPart is Vehicle selectedVehicle)
+        else if (selectedPart is Vehicle selectedVehicle)
         {
+
             vehicle = selectedVehicle;
+            if (currentVehicle != null)
+            {
+                Destroy(currentVehicle);
+            }
+            currentVehicle = Instantiate(vehicle.model, vehicleSpawn);
         }
-        if (selectedPart is Wheel selectedWheel)
+        else if (selectedPart is Wheel selectedWheel)
         {
             wheel = selectedWheel;
+            if (currentWheels != null)
+            {
+                Destroy(currentWheels);
+            }
+            currentWheels = Instantiate(wheel.model, wheelSpawn);
         }
         else
         {
-            Debug.Log("Selected part was not of known type");
+            Debug.Log("Selected part " + selectedPart.name + " was not of known type");
         }
     }
 }

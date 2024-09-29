@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a023da4ec117a848b966d1a0f345cfc, type: 3}
+  m_Name: Riveted
+  m_EditorClassIdentifier: 
+  partName: Riveted
+  icon: {fileID: 2800000, guid: db5dcedf1500a4c46b4611095e300624, type: 3}
+  model: {fileID: 4453787083454653252, guid: b1df7d9de695b4340a0fda679ed59a6a, type: 3}
+  weight: 1300
+  cost: 1000
+  topSpeed: 120
+  acceleration: 15
+  motorForce: 1000
+  brakeForce: 3000
+  maxSteerAngle: 30
+  mass: 1300
+  drag: 0.1
+  angularDrag: 0.05
+  numberOfWheels: 4
+  vehicleType: 3

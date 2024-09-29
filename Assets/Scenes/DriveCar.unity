@@ -376,7 +376,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7114960758016710414, guid: 7474cb9f21c8293439a21cc738ee3d3b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7727570099401087340, guid: 7474cb9f21c8293439a21cc738ee3d3b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -797,6 +797,10 @@ PrefabInstance:
     - target: {fileID: 3429420511213102919, guid: ddd0a0cf6789016419bac52934c886cd, type: 3}
       propertyPath: m_Name
       value: StandardV8InterceptorWheels
+      objectReference: {fileID: 0}
+    - target: {fileID: 3429420511213102919, guid: ddd0a0cf6789016419bac52934c886cd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4500181763135960160, guid: ddd0a0cf6789016419bac52934c886cd, type: 3}
       propertyPath: m_LocalPosition.x

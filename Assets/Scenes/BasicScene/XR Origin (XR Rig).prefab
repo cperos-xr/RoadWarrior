@@ -1821,6 +1821,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2761784063978902504, guid: d8f5b01c66d75014bb786b868f14a520, type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761784063978902504, guid: d8f5b01c66d75014bb786b868f14a520, type: 3}
       propertyPath: m_Parameters.numCornerVertices
       value: 4
       objectReference: {fileID: 0}
@@ -2062,6 +2066,10 @@ PrefabInstance:
     - target: {fileID: 2761784063978902504, guid: d8f5b01c66d75014bb786b868f14a520, type: 3}
       propertyPath: m_Parameters.numCapVertices
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761784063978902504, guid: d8f5b01c66d75014bb786b868f14a520, type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 2761784063978902504, guid: d8f5b01c66d75014bb786b868f14a520, type: 3}
       propertyPath: m_Parameters.numCornerVertices
