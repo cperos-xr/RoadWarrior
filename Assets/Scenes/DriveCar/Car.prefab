@@ -690,6 +690,15 @@ MonoBehaviour:
   motorForce: 1000
   brakeForce: 3000
   maxSteerAngle: 30
+  vehicleComponents:
+    frontLeftWheelCollider: {fileID: 4098902800016844717}
+    frontRightWheelCollider: {fileID: 7221579107957069855}
+    rearLeftWheelCollider: {fileID: 6280793627664190272}
+    rearRightWheelCollider: {fileID: 4874327524888526294}
+    frontLeftWheelTransform: {fileID: 1950754106632746095}
+    frontRightWheelTransform: {fileID: 8885564690642687960}
+    rearLeftWheelTransform: {fileID: 5255062854187143509}
+    rearRightWheelTransform: {fileID: 3065572905451224597}
   frontLeftWheelCollider: {fileID: 4098902800016844717}
   frontRightWheelCollider: {fileID: 7221579107957069855}
   rearLeftWheelCollider: {fileID: 6280793627664190272}

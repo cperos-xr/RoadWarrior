@@ -16,7 +16,7 @@ public class InputManager : MonoBehaviour
     public delegate void BrakeInputEvent(bool isBraking);
     public static event BrakeInputEvent OnBrake;
 
-    private void Start()
+    private void OnEnable()
     {
         playerInput = GetComponent<PlayerInput>();
         if (playerInput != null)

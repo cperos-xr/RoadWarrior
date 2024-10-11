@@ -1691,7 +1691,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1431717659459631089}
   - component: {fileID: 7705374395503683845}
-  - component: {fileID: 8719060080657064732}
   - component: {fileID: 4557657160563761382}
   m_Layer: 0
   m_Name: V8_Interceptor
@@ -1739,29 +1738,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.9300277, y: 1.1353003, z: 4.894759}
   m_Center: {x: 0.0050001144, y: 0.7624257, z: -0.25560427}
---- !u!114 &8719060080657064732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1227991545504878559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31d07904862c41e4fb8a6226c3882d25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  motorForce: 1000
-  brakeForce: 3000
-  maxSteerAngle: 30
-  frontLeftWheelCollider: {fileID: 3319303386269228293}
-  frontRightWheelCollider: {fileID: 2279487837760436301}
-  rearLeftWheelCollider: {fileID: 1967070686098868633}
-  rearRightWheelCollider: {fileID: 1701181039830674542}
-  frontLeftWheelTransform: {fileID: 1122967685537081725}
-  frontRightWheelTransform: {fileID: 526853919851355053}
-  rearLeftWheelTransform: {fileID: 3044051551795664237}
-  rearRightWheelTransform: {fileID: 8913415760474363634}
 --- !u!54 &4557657160563761382
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8079,6 +8055,7 @@ Transform:
   m_Children:
   - {fileID: 3611060213399692647}
   - {fileID: 3276786753634031545}
+  - {fileID: 2305488520784944470}
   m_Father: {fileID: 1431717659459631089}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4961611908293172258
@@ -15435,6 +15412,68 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9163823095989823234}
   m_Mesh: {fileID: 7131347246547221874, guid: 90f3d8e64ab8b714f9efc4fb48f15d54, type: 3}
+--- !u!1001 &4284235193463247598
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 730507577324549495}
+    m_Modifications:
+    - target: {fileID: 2632939667891818424, guid: 8ff0bf68b3915fc408261f12098e5756, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632939667891818424, guid: 8ff0bf68b3915fc408261f12098e5756, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632939667891818424, guid: 8ff0bf68b3915fc408261f12098e5756, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632939667891818424, guid: 8ff0bf68b3915fc408261f12098e5756, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632939667891818424, guid: 8ff0bf68b3915fc408261f12098e5756, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632939667891818424, guid: 8ff0bf68b3915fc408261f12098e5756, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632939667891818424, guid: 8ff0bf68b3915fc408261f12098e5756, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632939667891818424, guid: 8ff0bf68b3915fc408261f12098e5756, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632939667891818424, guid: 8ff0bf68b3915fc408261f12098e5756, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632939667891818424, guid: 8ff0bf68b3915fc408261f12098e5756, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4083849373689547727, guid: 8ff0bf68b3915fc408261f12098e5756, type: 3}
+      propertyPath: m_Name
+      value: Wheels Mount Points
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8ff0bf68b3915fc408261f12098e5756, type: 3}
+--- !u!4 &2305488520784944470 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2632939667891818424, guid: 8ff0bf68b3915fc408261f12098e5756, type: 3}
+  m_PrefabInstance: {fileID: 4284235193463247598}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6724709297787005551
 PrefabInstance:
   m_ObjectHideFlags: 0

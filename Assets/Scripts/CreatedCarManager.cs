@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CreatedCarManager : MonoBehaviour
@@ -19,20 +20,32 @@ public class CreatedCarManager : MonoBehaviour
     public GameObject currentWeapon;
 
 
+    [SerializeField] private VehicleComponents currentVehicleComponents;
+    [SerializeField] private Rigidbody rb;
+
+
+
+    public delegate void VehicleCreated(VehicleComponents vehicleComponents, Rigidbody rigidbody);
+    public static event VehicleCreated OnVehicleCreated;
+
+    public void CreateVehicle()
+    {
+        OnVehicleCreated?.Invoke(currentVehicleComponents, rb);
+    }
 
     private void OnEnable()
     {
-        ScrollViewController.OnSelectedVehiclePart += OnSelectedWeapon;
+        ScrollViewController.OnSelectedVehiclePart += OnSelectedPart;
         
     }
 
     private void OnDisable()
     {
-        ScrollViewController.OnSelectedVehiclePart -= OnSelectedWeapon;
+        ScrollViewController.OnSelectedVehiclePart -= OnSelectedPart;
 
     }
 
-    private void OnSelectedWeapon(VehiclePart selectedPart)
+    private void OnSelectedPart(VehiclePart selectedPart)
     {
         if (selectedPart is Weapon selectedWeapon)
         {
@@ -52,6 +65,8 @@ public class CreatedCarManager : MonoBehaviour
                 Destroy(currentVehicle);
             }
             currentVehicle = Instantiate(vehicle.model, vehicleSpawn);
+            rb = currentVehicle.GetComponent<Rigidbody>();
+
         }
         else if (selectedPart is Wheel selectedWheel)
         {
@@ -61,6 +76,8 @@ public class CreatedCarManager : MonoBehaviour
                 Destroy(currentWheels);
             }
             currentWheels = Instantiate(wheel.model, wheelSpawn);
+            WheelSet wheelSet = currentWheels.GetComponent<WheelSet>();
+            currentVehicleComponents = wheelSet.wheelComponents;
         }
         else
         {
