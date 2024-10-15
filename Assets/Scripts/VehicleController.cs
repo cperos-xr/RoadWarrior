@@ -79,7 +79,7 @@ public class VehicleController : MonoBehaviour
         verticalInput = moveInput;
     }
 
-    private void HandleBrakingInput(bool brakeInput)
+    private void HandleBrakingInput(double brakeInput)
     {
         // In this simplified version, we'll ignore braking for now
     }

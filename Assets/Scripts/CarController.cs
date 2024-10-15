@@ -43,9 +43,12 @@ public class CarController : MonoBehaviour
         verticalInput = value;
     }
 
-    private void HandleBrakingInput(bool isBrakingInput)
+    private void HandleBrakingInput(double isBrakingInput)
     {
-        isBraking = isBrakingInput;
+        if(isBrakingInput != 0)
+        {
+            isBraking = true;
+        }
     }
 
     private void HandleMotor()
