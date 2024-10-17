@@ -19,19 +19,11 @@ public class CreatedCarManager : MonoBehaviour
     public Transform weaponSpawn;
     public GameObject currentWeapon;
 
-
-    [SerializeField] private VehicleComponents currentVehicleComponents;
+    [SerializeField] private WheelTransforms currentWheelTransforms;
     [SerializeField] private Rigidbody rb;
 
-
-
-    public delegate void VehicleCreated(VehicleComponents vehicleComponents, Rigidbody rigidbody);
-    public static event VehicleCreated OnVehicleCreated;
-
-    public void CreateVehicle()
-    {
-        OnVehicleCreated?.Invoke(currentVehicleComponents, rb);
-    }
+    public delegate void WheelsSelected(WheelSet wheelSet);
+    public static event WheelsSelected OnWheelsSelected;
 
     private void OnEnable()
     {
@@ -77,7 +69,8 @@ public class CreatedCarManager : MonoBehaviour
             }
             currentWheels = Instantiate(wheel.model, wheelSpawn);
             WheelSet wheelSet = currentWheels.GetComponent<WheelSet>();
-            currentVehicleComponents = wheelSet.wheelComponents;
+            currentWheelTransforms = wheelSet.wheelTransforms;
+            OnWheelsSelected?.Invoke(wheelSet);
         }
         else
         {

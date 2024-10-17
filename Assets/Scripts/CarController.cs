@@ -43,7 +43,7 @@ public class CarController : MonoBehaviour
         verticalInput = value;
     }
 
-    private void HandleBrakingInput(double isBrakingInput)
+    private void HandleBrakingInput(float isBrakingInput)
     {
         if(isBrakingInput != 0)
         {

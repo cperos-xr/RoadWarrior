@@ -6,23 +6,13 @@ using UnityEngine;
 public class CreateDrivableCar : MonoBehaviour
 {
     public GameObject vehicleParentObject;
+    public CarController2 carController;
 
     [SerializeField] ObjectRotator objectRotator;
-    private void OnEnable()
-    {
-        CreatedCarManager.OnVehicleCreated += OnVehicleCreated;
-    }
 
-    private void OnDisable()
-    {
-        CreatedCarManager.OnVehicleCreated -= OnVehicleCreated;
-    }
-
-    private void OnVehicleCreated(VehicleComponents vehicleComponents, Rigidbody rigidbody)
+    public void CreateVehicle()
     {
         objectRotator.enabled = false;
-        VehicleController vehicleController = vehicleParentObject.AddComponent<VehicleController>();
-        vehicleController.vehicleComponents = vehicleComponents;
-        vehicleController.rigidBody = rigidbody;
+        carController.enabled = true;
     }
 }

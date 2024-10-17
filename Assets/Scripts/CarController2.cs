@@ -6,7 +6,10 @@ using UnityEngine;
 public class CarController2 : MonoBehaviour
 {
     public Rigidbody playerRigidBody;
-    public VehicleComponents wheelComponents;
+
+    public WheelColliders wheelColliders;
+    public WheelTransforms wheelTransforms;
+
     public float gasInput;
     public float steerInput;
     public float brakeInput;
@@ -17,7 +20,6 @@ public class CarController2 : MonoBehaviour
     private float speed;
 
     public AnimationCurve steeringCurve;
-
 
     // Start is called before the first frame update
     private void OnEnable()
@@ -48,32 +50,32 @@ public class CarController2 : MonoBehaviour
     void ApplySteering()
     {
         float steerAngle = steerInput * steeringCurve.Evaluate(speed);
-        wheelComponents.frontLeftWheelCollider.steerAngle = steerAngle;
-        wheelComponents.frontRightWheelCollider.steerAngle = steerAngle;
+        wheelColliders.frontLeftWheelCollider.steerAngle = steerAngle;
+        wheelColliders.frontRightWheelCollider.steerAngle = steerAngle;
 
     }
 
     void ApplyMotorForce()
     {
-        wheelComponents.rearLeftWheelCollider.motorTorque = gasInput * motorForce;
-        wheelComponents.rearRightWheelCollider.motorTorque = gasInput * motorForce;
+        wheelColliders.rearLeftWheelCollider.motorTorque = gasInput * motorForce;
+        wheelColliders.rearRightWheelCollider.motorTorque = gasInput * motorForce;
     }
 
     void ApplyWheelPositions()
     {
-        UpdateWheel(wheelComponents.frontLeftWheelCollider, wheelComponents.frontLeftWheelTransform);
-        UpdateWheel(wheelComponents.frontRightWheelCollider, wheelComponents.frontRightWheelTransform);
-        UpdateWheel(wheelComponents.rearLeftWheelCollider, wheelComponents.rearLeftWheelTransform);
-        UpdateWheel(wheelComponents.rearRightWheelCollider, wheelComponents.rearRightWheelTransform);
+        UpdateWheel(wheelColliders.frontLeftWheelCollider, wheelTransforms.frontLeftWheelTransform);
+        UpdateWheel(wheelColliders.frontRightWheelCollider, wheelTransforms.frontRightWheelTransform);
+        UpdateWheel(wheelColliders.rearLeftWheelCollider, wheelTransforms.rearLeftWheelTransform);
+        UpdateWheel(wheelColliders.rearRightWheelCollider, wheelTransforms.rearRightWheelTransform);
     }
 
     void ApplyBrakeForce()
     {
-        wheelComponents.frontLeftWheelCollider.brakeTorque = brakeInput * brakeForce * 0.7f;
-        wheelComponents.frontRightWheelCollider.brakeTorque = brakeInput * brakeForce * 0.7f;
+        wheelColliders.frontLeftWheelCollider.brakeTorque = brakeInput * brakeForce * 0.7f;
+        wheelColliders.frontRightWheelCollider.brakeTorque = brakeInput * brakeForce * 0.7f;
 
-        wheelComponents.rearLeftWheelCollider.brakeTorque = brakeInput * brakeForce * 0.3f;
-        wheelComponents.rearRightWheelCollider.brakeTorque = brakeInput * brakeForce * 0.3f;
+        wheelColliders.rearLeftWheelCollider.brakeTorque = brakeInput * brakeForce * 0.3f;
+        wheelColliders.rearRightWheelCollider.brakeTorque = brakeInput * brakeForce * 0.3f;
     }
 
     void UpdateWheel(WheelCollider wheelCollider, Transform wheelTransform)
@@ -96,20 +98,27 @@ public class CarController2 : MonoBehaviour
         steerInput = value;
     }
 
-    private void HandleBrakingInput(double isBraking)
+    private void HandleBrakingInput(float isBraking)
     {
-        brakeInput = Mathf.Abs((float)isBraking);
+        brakeInput = Mathf.Abs(isBraking);
     }
 
     private void CheckInput()
     {
         slipAngle = Vector3.Angle(transform.forward, playerRigidBody.velocity - transform.forward);
-        if (slipAngle < 120f)
+        //fixed code to brake even after going on reverse by Andrew Alex 
+        float movingDirection = Vector3.Dot(transform.forward, playerRigidBody.velocity);
+        if (movingDirection < -0.5f && gasInput > 0)
         {
-            if (gasInput > 0)
-            {
-                brakeInput = 0;
-            }
+            brakeInput = Mathf.Abs(gasInput);
+        }
+        else if (movingDirection > 0.5f && gasInput < 0)
+        {
+            brakeInput = Mathf.Abs(gasInput);
+        }
+        else
+        {
+            brakeInput = 0;
         }
     }
 }

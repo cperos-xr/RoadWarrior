@@ -5,6 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewWheel", menuName = "Vehicle Parts/Wheel")]
 public class Wheel : VehiclePart
 {
+    [Header("Wheel Scale")]
+    Vector3 frontWheelScale;
+    Vector3 rearWheelScale;
+
     [Header("Wheel Stats")]
     public float hitPoints;
     public float radius;

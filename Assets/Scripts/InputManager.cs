@@ -14,7 +14,7 @@ public class InputManager : MonoBehaviour
     public delegate void MovementInputEvent(float value);
     public static event MovementInputEvent OnMove;
 
-    public delegate void BrakeInputEvent(double isBraking);
+    public delegate void BrakeInputEvent(float isBraking);
     public static event BrakeInputEvent OnBrake;
 
     private void OnEnable()

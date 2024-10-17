@@ -2,7 +2,7 @@
     "name": "PlayerInputActions",
     "maps": [
         {
-            "name": "CarControls",
+            "name": "Movement",
             "id": "de011e5c-8cac-42de-b80b-06ba07f151ed",
             "actions": [
                 {
@@ -114,7 +114,7 @@
                 {
                     "name": "negative",
                     "id": "10588a11-8aa9-4c6c-8440-4e873691be2c",
-                    "path": "<Keyboard>/w",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -125,7 +125,7 @@
                 {
                     "name": "positive",
                     "id": "edb8bcb3-2346-4b75-9520-05edb90efa52",
-                    "path": "<Keyboard>/s",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
