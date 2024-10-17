@@ -52,7 +52,6 @@ public class CarController2 : MonoBehaviour
         float steerAngle = steerInput * steeringCurve.Evaluate(speed);
         wheelColliders.frontLeftWheelCollider.steerAngle = steerAngle;
         wheelColliders.frontRightWheelCollider.steerAngle = steerAngle;
-
     }
 
     void ApplyMotorForce()

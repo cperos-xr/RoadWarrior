@@ -164,7 +164,7 @@ WheelCollider:
   m_GameObject: {fileID: 80049491}
   serializedVersion: 2
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 3
+  m_Radius: 4.5
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
@@ -184,7 +184,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 2
+    m_Stiffness: 1
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -321,7 +321,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -423,7 +423,7 @@ WheelCollider:
   m_GameObject: {fileID: 253701604}
   serializedVersion: 2
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 3
+  m_Radius: 4.5
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
@@ -443,7 +443,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 2
+    m_Stiffness: 1
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -782,7 +782,7 @@ WheelCollider:
   m_GameObject: {fileID: 657109712}
   serializedVersion: 2
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 3
+  m_Radius: 4.5
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
@@ -802,7 +802,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 2
+    m_Stiffness: 1
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -959,7 +959,7 @@ GameObject:
   - component: {fileID: 708452637}
   - component: {fileID: 708452638}
   m_Layer: 0
-  m_Name: PopulateWeapons
+  m_Name: Populate Weapons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1329,7 +1329,7 @@ WheelCollider:
   m_GameObject: {fileID: 859594695}
   serializedVersion: 2
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 3
+  m_Radius: 4.5
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
@@ -1349,7 +1349,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 2
+    m_Stiffness: 1
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1543,7 +1543,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6538398547791466626, guid: fc148cc18dc8409448678c64598705da, type: 3}
       propertyPath: m_Name
-      value: InputManager
+      value: Input Manager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1561,7 +1561,7 @@ GameObject:
   - component: {fileID: 986092983}
   - component: {fileID: 986092984}
   m_Layer: 0
-  m_Name: PopulateWheels
+  m_Name: Populate Wheels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1851,7 +1851,7 @@ GameObject:
   - component: {fileID: 1188293450}
   - component: {fileID: 1188293451}
   m_Layer: 0
-  m_Name: PopulateVehicles
+  m_Name: Populate Vehicles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1903,7 +1903,7 @@ GameObject:
   - component: {fileID: 1231282789}
   - component: {fileID: 1231282790}
   m_Layer: 0
-  m_Name: CreatedCarManager
+  m_Name: Created Car Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1945,12 +1945,12 @@ MonoBehaviour:
   currentWheels: {fileID: 0}
   weaponSpawn: {fileID: 1250801109}
   currentWeapon: {fileID: 0}
+  carController: {fileID: 0}
   currentWheelTransforms:
     frontLeftWheelTransform: {fileID: 0}
     frontRightWheelTransform: {fileID: 0}
     rearLeftWheelTransform: {fileID: 0}
     rearRightWheelTransform: {fileID: 0}
-  rb: {fileID: 0}
 --- !u!1 &1249617917
 GameObject:
   m_ObjectHideFlags: 0
@@ -2263,6 +2263,7 @@ Transform:
   - {fileID: 1890190316}
   - {fileID: 1885323972}
   - {fileID: 2120579398}
+  - {fileID: 2077713408}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1667134928 stripped
@@ -2506,7 +2507,7 @@ GameObject:
   - component: {fileID: 1885323972}
   - component: {fileID: 1885323973}
   m_Layer: 0
-  m_Name: CreateDrivableCar
+  m_Name: Create Drivable Car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2781,6 +2782,52 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2918649191329090007, guid: 23b057bbe6339334eade6fc51a473b77, type: 3}
   m_PrefabInstance: {fileID: 1939161185}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2077713407
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2077713408}
+  - component: {fileID: 2077713409}
+  m_Layer: 0
+  m_Name: Vehicle Stats Customizer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2077713408
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077713407}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1420832136}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2077713409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077713407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f9a2144b82bd0346ad9b0dbfd477d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carController: {fileID: 210113328}
+  carBoxCollider: {fileID: 210113330}
 --- !u!114 &2089218505 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2824316628910615638, guid: 23b057bbe6339334eade6fc51a473b77, type: 3}
@@ -2924,7 +2971,7 @@ GameObject:
   - component: {fileID: 2120579398}
   - component: {fileID: 2120579399}
   m_Layer: 0
-  m_Name: WheelPositionController
+  m_Name: Wheel Position Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2957,10 +3004,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e999745cb6d82e64492dacf96f0c289b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  originalFrontWheelColliderRadius: 0
+  originalRearWheelColliderRadius: 0
   frontLeft: {fileID: 11400000, guid: 90bac8027ad3fde408d8e32b1730c104, type: 2}
   frontRight: {fileID: 11400000, guid: 6d69838371fd266479bd387e6aabd964, type: 2}
   rearLeft: {fileID: 11400000, guid: 8cc953873118a044e9a0176aa188c4dd, type: 2}
   rearRight: {fileID: 11400000, guid: 80b48917bc631a64ca449d2b3ac01012, type: 2}
+  currentVehicleBody: {fileID: 0}
   currentWheelSet: {fileID: 0}
   wheelPositions:
     frontLeftWheelTransform: {fileID: 0}

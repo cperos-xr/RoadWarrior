@@ -14,5 +14,6 @@ public class CreateDrivableCar : MonoBehaviour
     {
         objectRotator.enabled = false;
         carController.enabled = true;
+        carController.playerRigidBody.isKinematic = false;
     }
 }

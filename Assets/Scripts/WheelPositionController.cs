@@ -5,11 +5,16 @@ using UnityEngine;
 
 public class WheelPositionController : MonoBehaviour
 {
+
+    public float originalFrontWheelColliderRadius;
+    public float originalRearWheelColliderRadius;
+
     public MountConfig frontLeft;
     public MountConfig frontRight;
     public MountConfig rearLeft;
     public MountConfig rearRight;
 
+    public Vehicle currentVehicleBody;
     public WheelSet currentWheelSet;
 
     public WheelTransforms wheelPositions;
@@ -17,18 +22,49 @@ public class WheelPositionController : MonoBehaviour
 
     [SerializeField] CarController2 carController;
 
-
+    private void Awake()
+    {
+        originalFrontWheelColliderRadius = wheelColliders.frontLeftWheelCollider.radius;
+        originalRearWheelColliderRadius = wheelColliders.rearLeftWheelCollider.radius;
+    }
 
     private void OnEnable()
     {
         CreatedCarManager.OnWheelsSelected += OnWheelsSelected;
+        CreatedCarManager.OnVehicleBodySelected += OnVehicleBodySelected;
         WeaponMountPoint.OnChangeMountPoint += SetMyPosition;
     }
 
     private void OnDisable()
     {
         CreatedCarManager.OnWheelsSelected -= OnWheelsSelected;
+        CreatedCarManager.OnVehicleBodySelected -= OnVehicleBodySelected;
         WeaponMountPoint.OnChangeMountPoint -= SetMyPosition;
+    }
+
+    private void OnVehicleBodySelected(Vehicle selectedVehicleBody)
+    {
+        currentVehicleBody = selectedVehicleBody;
+        SetWheelScales(currentVehicleBody.frontWheelScale, currentVehicleBody.rearWheelScale);
+    }
+
+    private void SetWheelScales(Vector3 frontWheelScale, Vector3 rearWheelScale)
+    {
+        if (currentWheelSet != null)
+        {
+            currentWheelSet.wheelTransforms.frontLeftWheelTransform.localScale = frontWheelScale;
+            currentWheelSet.wheelTransforms.frontRightWheelTransform.localScale = frontWheelScale;
+            currentWheelSet.wheelTransforms.rearLeftWheelTransform.localScale = rearWheelScale;
+            currentWheelSet.wheelTransforms.rearRightWheelTransform.localScale = rearWheelScale;
+        }
+
+        if (currentVehicleBody != null)
+        {
+            wheelColliders.frontLeftWheelCollider.radius = frontWheelScale.x * originalFrontWheelColliderRadius;
+            wheelColliders.frontRightWheelCollider.radius = frontWheelScale.x * originalFrontWheelColliderRadius;
+            wheelColliders.rearLeftWheelCollider.radius = rearWheelScale.x * originalRearWheelColliderRadius;
+            wheelColliders.rearRightWheelCollider.radius = rearWheelScale.x * originalRearWheelColliderRadius;
+        }
     }
 
     private void OnWheelsSelected(WheelSet wheelSet)
@@ -38,6 +74,10 @@ public class WheelPositionController : MonoBehaviour
         SetWheelPositions();
         SetColliderPositions();
         carController.wheelTransforms = currentWheelSet.wheelTransforms;
+        if (currentVehicleBody != null)
+        {
+            SetWheelScales(currentVehicleBody.frontWheelScale, currentVehicleBody.rearWheelScale);
+        }
     }
 
     private void SetColliderPositions() 

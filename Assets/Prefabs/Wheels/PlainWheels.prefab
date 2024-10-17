@@ -46,15 +46,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheels: {fileID: 11400000, guid: f2c86c2a6bb4a8a469741c34fcc91367, type: 2}
-  wheelComponents:
-    frontLeftWheelCollider: {fileID: 0}
-    frontRightWheelCollider: {fileID: 0}
-    rearLeftWheelCollider: {fileID: 0}
-    rearRightWheelCollider: {fileID: 0}
-    frontLeftWheelTransform: {fileID: 262084493593788300}
-    frontRightWheelTransform: {fileID: 2259112860386946494}
-    rearLeftWheelTransform: {fileID: 3804294890162763742}
-    rearRightWheelTransform: {fileID: 458437924669797447}
   wheelTransforms:
     frontLeftWheelTransform: {fileID: 262084493593788300}
     frontRightWheelTransform: {fileID: 2259112860386946494}
@@ -134,7 +125,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.10000002, z: 0.6}
+  m_LocalScale: {x: 0.9, y: 0.10000002, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4125049536096807271}
@@ -559,7 +550,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.10000002, z: 0.6}
+  m_LocalScale: {x: 0.9, y: 0.10000002, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2669283901516947913}
@@ -689,7 +680,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.10000002, z: 0.6}
+  m_LocalScale: {x: 0.9, y: 0.10000002, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1591646367571388085}
@@ -808,7 +799,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.10000002, z: 0.6}
+  m_LocalScale: {x: 0.9, y: 0.10000002, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5814875932798656266}

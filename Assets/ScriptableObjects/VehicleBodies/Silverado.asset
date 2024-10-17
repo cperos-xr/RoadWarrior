@@ -15,15 +15,18 @@ MonoBehaviour:
   partName: Silverado
   icon: {fileID: 2800000, guid: a588158238577f34ab446d9b3e18ea76, type: 3}
   model: {fileID: 2079826825891509830, guid: 861646c180efd47428fe2a0f2114db81, type: 3}
-  weight: 1300
+  weight: 1500
   cost: 1000
   topSpeed: 120
   acceleration: 15
-  motorForce: 1000
-  brakeForce: 3000
+  motorForce: 1200
+  brakeForce: 45000
   maxSteerAngle: 30
-  mass: 1300
+  mass: 1500
   drag: 0.1
   angularDrag: 0.05
-  numberOfWheels: 4
-  vehicleType: 2
+  frontWheelScale: {x: 0.8, y: 0.8, z: 0.8}
+  rearWheelScale: {x: 0.8, y: 0.8, z: 0.8}
+  center: {x: 0, y: 0.58, z: -0.14}
+  size: {x: 1.94, y: 0.7, z: 4.54}
+  vehicleType: 3

@@ -15,6 +15,14 @@ public class Vehicle : VehiclePart
     public float drag;
     public float angularDrag;
 
-    public int numberOfWheels;
+    [Header("Wheel Scale")]
+    public Vector3 frontWheelScale = Vector3.one;
+    public Vector3 rearWheelScale = Vector3.one;
+
+    [Header("Collider")]
+    public Vector3 center = Vector3.one;
+    public Vector3 size = Vector3.one;
+
+    [Header("Vehicle Type")]
     public VehicleType vehicleType;
 }

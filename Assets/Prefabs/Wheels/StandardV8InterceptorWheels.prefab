@@ -3684,15 +3684,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheels: {fileID: 11400000, guid: f2c86c2a6bb4a8a469741c34fcc91367, type: 2}
-  wheelComponents:
-    frontLeftWheelCollider: {fileID: 4155696921562325370}
-    frontRightWheelCollider: {fileID: 6759802807200411162}
-    rearLeftWheelCollider: {fileID: 7638772413601615422}
-    rearRightWheelCollider: {fileID: 5471352348568188692}
-    frontLeftWheelTransform: {fileID: 6025589339891392872}
-    frontRightWheelTransform: {fileID: 7821201637129316979}
-    rearLeftWheelTransform: {fileID: 4621840370665405524}
-    rearRightWheelTransform: {fileID: 2107110376725644185}
   wheelTransforms:
     frontLeftWheelTransform: {fileID: 6025589339891392872}
     frontRightWheelTransform: {fileID: 7821201637129316979}
@@ -3808,7 +3799,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.829, y: 0.352, z: -1.793}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3367204772847747704}
@@ -6166,7 +6157,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.829, y: 0.352, z: -1.793}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8867638630198729530}
