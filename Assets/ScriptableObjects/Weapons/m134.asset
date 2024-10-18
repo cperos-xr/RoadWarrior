@@ -24,8 +24,8 @@ MonoBehaviour:
   magazineSize: 100
   reloadTime: 2
   ammoType: 1
-  horizontalSpread: 0.1
-  verticalSpread: 0.1
+  horizontalSpread: 0.01
+  verticalSpread: 0.01
   burstDelay: 0.1
   bulletsPerShot: 3
   bulletHolePrefab: {fileID: 543390721526861894, guid: cbea970582c36b044b5a28f5851767b8, type: 3}

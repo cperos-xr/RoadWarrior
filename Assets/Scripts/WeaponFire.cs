@@ -17,6 +17,8 @@ public class WeaponFire : MonoBehaviour
 
     private int bulletsFired;
 
+    public ParticleSystem muzzleFlash;
+
 
     void Awake()
     {
@@ -93,6 +95,7 @@ public class WeaponFire : MonoBehaviour
         }
 
         // Play MuzzleFlash here
+        muzzleFlash.Play();
 
         currentAmmo--;
         bulletsFired--;
