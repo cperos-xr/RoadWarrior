@@ -45,6 +45,96 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mountConfig: {fileID: 11400000, guid: 55e91ae111209264f94fa3f1797920b2, type: 2}
+--- !u!1 &7366287522703176965
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6331394223959123249}
+  - component: {fileID: 5800336492603641113}
+  m_Layer: 0
+  m_Name: BulletShells
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6331394223959123249
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7366287522703176965}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 3.1, y: 0, z: 1.18}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2458534008309963434}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &5800336492603641113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7366287522703176965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9457db4b8d2b9948a834ee47959e56d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mountConfig: {fileID: 11400000, guid: f4c9eacfff7d537408e48377c1c1952b, type: 2}
+--- !u!1 &7838958793181305495
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1190303256802838300}
+  - component: {fileID: 5533626027902526241}
+  m_Layer: 0
+  m_Name: MuzzleFlash
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1190303256802838300
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7838958793181305495}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: -14.71, y: -0.04, z: 0.64}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2458534008309963434}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!114 &5533626027902526241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7838958793181305495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9457db4b8d2b9948a834ee47959e56d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mountConfig: {fileID: 11400000, guid: 0bcf5496b7c7cc14f80e04f987d62db6, type: 2}
 --- !u!1001 &7310143079933646873
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -115,6 +205,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5146681718063874739, guid: ebda9fb39e54dd741984167b1e9ea2ba, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3231452683631788501}
+    - targetCorrespondingSourceObject: {fileID: 5146681718063874739, guid: ebda9fb39e54dd741984167b1e9ea2ba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1190303256802838300}
+    - targetCorrespondingSourceObject: {fileID: 5146681718063874739, guid: ebda9fb39e54dd741984167b1e9ea2ba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6331394223959123249}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 9199261849990390558, guid: ebda9fb39e54dd741984167b1e9ea2ba, type: 3}
 --- !u!4 &2458534008309963434 stripped

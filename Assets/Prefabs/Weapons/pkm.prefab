@@ -1,5 +1,95 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &261477556321469635
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6801853476200008664}
+  - component: {fileID: 7146992854031210968}
+  m_Layer: 0
+  m_Name: MuzzleFlash
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6801853476200008664
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261477556321469635}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -486, y: 53.7, z: 2.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 163465741139477822}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &7146992854031210968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261477556321469635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9457db4b8d2b9948a834ee47959e56d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mountConfig: {fileID: 11400000, guid: 0bcf5496b7c7cc14f80e04f987d62db6, type: 2}
+--- !u!1 &1303691393256147835
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3292284750309048382}
+  - component: {fileID: 3350837086936271275}
+  m_Layer: 0
+  m_Name: BulletShells
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3292284750309048382
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303691393256147835}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 87.4, y: 35.6, z: -18.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 163465741139477822}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &3350837086936271275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303691393256147835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9457db4b8d2b9948a834ee47959e56d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mountConfig: {fileID: 11400000, guid: f4c9eacfff7d537408e48377c1c1952b, type: 2}
 --- !u!1001 &418278707861250773
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66,6 +156,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: fc83b6ba00578a546bfc6f3efde0c9c2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6801853476200008664}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: fc83b6ba00578a546bfc6f3efde0c9c2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3292284750309048382}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc83b6ba00578a546bfc6f3efde0c9c2, type: 3}
+--- !u!4 &163465741139477822 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fc83b6ba00578a546bfc6f3efde0c9c2, type: 3}
+  m_PrefabInstance: {fileID: 418278707861250773}
+  m_PrefabAsset: {fileID: 0}

@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5789356284649935126
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4887994229259669460}
+  - component: {fileID: 8966860866141829706}
+  m_Layer: 0
+  m_Name: MuzzleFlash
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4887994229259669460
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5789356284649935126}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -2.48, y: 0.08, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 39656220058239582}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &8966860866141829706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5789356284649935126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9457db4b8d2b9948a834ee47959e56d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mountConfig: {fileID: 11400000, guid: 0bcf5496b7c7cc14f80e04f987d62db6, type: 2}
 --- !u!1 &6070022820670652324
 GameObject:
   m_ObjectHideFlags: 0
@@ -45,6 +90,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mountConfig: {fileID: 11400000, guid: 55e91ae111209264f94fa3f1797920b2, type: 2}
+--- !u!1 &9106416151828940353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9001805529910915241}
+  - component: {fileID: 7964798965838963499}
+  m_Layer: 0
+  m_Name: BulletShells
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9001805529910915241
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9106416151828940353}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.302, y: 0.134, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 39656220058239582}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7964798965838963499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9106416151828940353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9457db4b8d2b9948a834ee47959e56d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mountConfig: {fileID: 11400000, guid: f4c9eacfff7d537408e48377c1c1952b, type: 2}
 --- !u!1001 &506191386203760053
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -115,6 +205,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 003ab81b0d0ce5b4e991de9f81e27571, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8433761725137386926}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 003ab81b0d0ce5b4e991de9f81e27571, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4887994229259669460}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 003ab81b0d0ce5b4e991de9f81e27571, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9001805529910915241}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 003ab81b0d0ce5b4e991de9f81e27571, type: 3}
 --- !u!4 &39656220058239582 stripped
