@@ -19,6 +19,6 @@ MonoBehaviour:
   cost: 5
   damage: 5
   range: 5
-  fireRate: 5
+  fireRate: 0.5
   ammoType: 1
   mountPoint: 5

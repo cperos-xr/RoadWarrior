@@ -6,6 +6,7 @@ public class InputManager : MonoBehaviour
     private PlayerInput playerInput;
     private InputAction moveAction;
     private InputAction brakeAction;
+    private InputAction fireAction;
 
     // Events to broadcast input data
     public delegate void SteeringInputEvent(float value);
@@ -16,6 +17,9 @@ public class InputManager : MonoBehaviour
 
     public delegate void BrakeInputEvent(float isBraking);
     public static event BrakeInputEvent OnBrake;
+
+    public delegate void FireInputEvent(float isFiring);
+    public static event FireInputEvent OnFire;
 
     private void OnEnable()
     {
@@ -32,7 +36,11 @@ public class InputManager : MonoBehaviour
             {
                 Debug.LogError("Brake action not found.");
             }
-
+            fireAction = playerInput.actions.FindAction("Fire");
+            if (fireAction == null)
+            {
+                Debug.LogError("Fire action not found.");
+            }
         }
         else
         {
@@ -44,6 +52,7 @@ public class InputManager : MonoBehaviour
     {
         MovePlayer();
         BrakePlayer();
+        FirePlayer();
     }
 
     private void MovePlayer()
@@ -64,6 +73,19 @@ public class InputManager : MonoBehaviour
 
         float isBraking = brakeAction.ReadValue<float>();
         Debug.Log("Braking: " + isBraking);
-        OnBrake?.Invoke(isBraking);
+        if (isBraking != 0)
+        {
+            OnBrake?.Invoke(isBraking);
+        }
+
+    }
+
+    private void FirePlayer()
+    {
+        if (fireAction == null) return;
+
+        float isFiring = fireAction.ReadValue<float>();
+        Debug.Log("Firing: " + isFiring);
+        OnFire?.Invoke(isFiring);
     }
 }

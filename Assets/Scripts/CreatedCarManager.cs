@@ -26,21 +26,20 @@ public class CreatedCarManager : MonoBehaviour
     public delegate void WheelsSelected(WheelSet wheelSet);
     public static event WheelsSelected OnWheelsSelected;
 
-    public delegate void VehicleBodySelected(Vehicle VehicleBody);
+    public delegate void VehicleBodySelected(Vehicle vehicleBody);
     public static event VehicleBodySelected OnVehicleBodySelected;
 
-
+    public delegate void PrimaryWeaponSelected(Weapon primaryWeapon, FireWeapon fireWeapon);
+    public static event PrimaryWeaponSelected OnPrimaryWeaponSelected;
 
     private void OnEnable()
     {
         ScrollViewController.OnSelectedVehiclePart += OnSelectedPart;
-        
     }
 
     private void OnDisable()
     {
         ScrollViewController.OnSelectedVehiclePart -= OnSelectedPart;
-
     }
 
     private void OnSelectedPart(VehiclePart selectedPart)
@@ -53,6 +52,8 @@ public class CreatedCarManager : MonoBehaviour
                 Destroy(currentWeapon);
             }
             currentWeapon = Instantiate(weapon.model, weaponSpawn);
+            FireWeapon fireWeapon = currentWeapon.GetComponent<FireWeapon>();
+            OnPrimaryWeaponSelected?.Invoke(weapon, fireWeapon);
         }
         else if (selectedPart is Vehicle selectedVehicle)
         {

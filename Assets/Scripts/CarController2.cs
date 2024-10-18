@@ -21,24 +21,39 @@ public class CarController2 : MonoBehaviour
 
     public AnimationCurve steeringCurve;
 
+    [SerializeField] private PlayerCarInput input;
+
     // Start is called before the first frame update
     private void OnEnable()
     {
-        InputManager.OnSteer += HandleSteeringInput;
-        InputManager.OnMove += HandleMovementInput;
-        InputManager.OnBrake += HandleBrakingInput;
+        if (input == null)
+        {
+            InputManager.OnSteer += HandleSteeringInput;
+            InputManager.OnMove += HandleMovementInput;
+            InputManager.OnBrake += HandleBrakingInput;
+        }
+
     }
 
     private void OnDisable()
     {
-        InputManager.OnSteer -= HandleSteeringInput;
-        InputManager.OnMove -= HandleMovementInput;
-        InputManager.OnBrake -= HandleBrakingInput;
+        if (input == null)
+        {
+            InputManager.OnSteer -= HandleSteeringInput;
+            InputManager.OnMove -= HandleMovementInput;
+            InputManager.OnBrake -= HandleBrakingInput;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (input != null)
+        {
+            gasInput = input.throttleDampened;
+            steerInput = input.steeringDampened;
+            brakeInput = input.brakeInput;
+        }
         speed = playerRigidBody.velocity.magnitude;
         CheckInput();
         ApplyMotorForce();

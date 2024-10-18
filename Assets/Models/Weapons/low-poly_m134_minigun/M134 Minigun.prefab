@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &567012562025724978
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3213582714593338450}
+  m_Layer: 0
+  m_Name: FireWeapon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3213582714593338450
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567012562025724978}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 3.328, y: -0.005, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2247208059139861414}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &1775850571825171533
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64,6 +95,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7146521406498821007, guid: 1a4f0ff20bea9584e90c190ac5e189cb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1a4f0ff20bea9584e90c190ac5e189cb, type: 3}
       propertyPath: m_Name
       value: M134 Minigun
@@ -72,6 +107,37 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: -8700617353114198275, guid: 1a4f0ff20bea9584e90c190ac5e189cb, type: 3}
     - {fileID: 65702495048144492, guid: 1a4f0ff20bea9584e90c190ac5e189cb, type: 3}
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1a4f0ff20bea9584e90c190ac5e189cb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3213582714593338450}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1a4f0ff20bea9584e90c190ac5e189cb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2344300348532138177}
   m_SourcePrefab: {fileID: 100100000, guid: 1a4f0ff20bea9584e90c190ac5e189cb, type: 3}
+--- !u!1 &1469439558912143644 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1a4f0ff20bea9584e90c190ac5e189cb, type: 3}
+  m_PrefabInstance: {fileID: 1775850571825171533}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2344300348532138177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469439558912143644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb254bb081ae85e45815466f9eef1974, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 3213582714593338450}
+  projectile: {fileID: 298989638786803696, guid: 46b92ae293bed454280510d018e26802, type: 3}
+  muzzleFlash: {fileID: 5551044978464968228, guid: faa8e8a4047518d459c42eba502d1833, type: 3}
+--- !u!4 &2247208059139861414 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1a4f0ff20bea9584e90c190ac5e189cb, type: 3}
+  m_PrefabInstance: {fileID: 1775850571825171533}
+  m_PrefabAsset: {fileID: 0}
