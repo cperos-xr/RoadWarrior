@@ -72,6 +72,15 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Aim"",
+                    ""type"": ""Button"",
+                    ""id"": ""bd3c73fe-34e4-4b6b-9c1c-90a7346cc9bb"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -261,6 +270,72 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
                     ""action"": ""Reload"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""86a6255d-19ec-49b1-8330-7702ccbf317e"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Aim"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""373f0718-ba78-4d9d-b1f3-655a5bcbe0c5"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""cd2ea0fe-2c53-4130-aa59-5a66677e8c3a"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""23f0477b-efc0-4db7-87ce-6fcf768e35ad"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Aim"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""e3f4e178-f3aa-453e-a6b2-fd4d9cd2e129"",
+                    ""path"": ""<Keyboard>/numpadMultiply"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""506cb3fa-4dfe-45be-b229-5aee92dcb88c"",
+                    ""path"": ""<Keyboard>/numpadMinus"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -274,6 +349,7 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
         m_Car_Brake = m_Car.FindAction("Brake", throwIfNotFound: true);
         m_Car_Fire = m_Car.FindAction("Fire", throwIfNotFound: true);
         m_Car_Reload = m_Car.FindAction("Reload", throwIfNotFound: true);
+        m_Car_Aim = m_Car.FindAction("Aim", throwIfNotFound: true);
     }
 
     ~@PlayerInputContols()
@@ -345,6 +421,7 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
     private readonly InputAction m_Car_Brake;
     private readonly InputAction m_Car_Fire;
     private readonly InputAction m_Car_Reload;
+    private readonly InputAction m_Car_Aim;
     public struct CarActions
     {
         private @PlayerInputContols m_Wrapper;
@@ -354,6 +431,7 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
         public InputAction @Brake => m_Wrapper.m_Car_Brake;
         public InputAction @Fire => m_Wrapper.m_Car_Fire;
         public InputAction @Reload => m_Wrapper.m_Car_Reload;
+        public InputAction @Aim => m_Wrapper.m_Car_Aim;
         public InputActionMap Get() { return m_Wrapper.m_Car; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -378,6 +456,9 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
             @Reload.started += instance.OnReload;
             @Reload.performed += instance.OnReload;
             @Reload.canceled += instance.OnReload;
+            @Aim.started += instance.OnAim;
+            @Aim.performed += instance.OnAim;
+            @Aim.canceled += instance.OnAim;
         }
 
         private void UnregisterCallbacks(ICarActions instance)
@@ -397,6 +478,9 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
             @Reload.started -= instance.OnReload;
             @Reload.performed -= instance.OnReload;
             @Reload.canceled -= instance.OnReload;
+            @Aim.started -= instance.OnAim;
+            @Aim.performed -= instance.OnAim;
+            @Aim.canceled -= instance.OnAim;
         }
 
         public void RemoveCallbacks(ICarActions instance)
@@ -421,5 +505,6 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
         void OnBrake(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
         void OnReload(InputAction.CallbackContext context);
+        void OnAim(InputAction.CallbackContext context);
     }
 }

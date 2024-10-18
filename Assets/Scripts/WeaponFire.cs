@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class WeaponFire : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class WeaponFire : MonoBehaviour
     public Weapon weapon;
 
     public Transform firePoint;
+    public Transform weaponTurret;
 
     private RaycastHit raycastHit;
     [SerializeField] private int currentAmmo;
@@ -19,6 +21,9 @@ public class WeaponFire : MonoBehaviour
 
     public ParticleSystem muzzleFlash;
     public ParticleSystem bulletshell;
+
+    public float rotationValue;
+    public float rotationSpeed;
 
 
     void Awake()
@@ -34,12 +39,35 @@ public class WeaponFire : MonoBehaviour
     {
         input.Enable();
         CreatedCarManager.OnPrimaryWeaponSelected += OnPrimaryWeaponSelected;
+        input.Car.Aim.performed += RotateTurret;
+        input.Car.Aim.canceled += StopRotation;
     }
 
     private void OnDisable()
     {
         input.Disable();
         CreatedCarManager.OnPrimaryWeaponSelected -= OnPrimaryWeaponSelected;
+        input.Car.Aim.performed += RotateTurret;
+        input.Car.Aim.canceled += StopRotation;
+    }
+
+    private void RotateTurret(InputAction.CallbackContext value)
+    {
+        rotationValue = value.ReadValue<float>();
+    }
+
+    private void StopRotation(InputAction.CallbackContext value)
+    {
+        rotationValue = 0;
+    }
+
+    private void RotateWeaponTurret()
+    {
+        // Calculate the new rotation amount based on the input and rotation speed
+        float rotationAmount = rotationValue * rotationSpeed * Time.deltaTime;
+
+        // Apply the rotation to the turret
+        weaponTurret.Rotate(0, rotationAmount, 0);
     }
 
     private void OnPrimaryWeaponSelected(Weapon primaryWeapon)
@@ -55,6 +83,8 @@ public class WeaponFire : MonoBehaviour
             bulletsFired = weapon.bulletsPerShot;
             PerformShot();
         }
+
+        RotateWeaponTurret();
     }
 
     private void StartShot()
