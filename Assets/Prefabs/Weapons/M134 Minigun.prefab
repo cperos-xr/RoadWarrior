@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3213582714593338450}
+  - component: {fileID: 7551168255189980179}
   m_Layer: 0
-  m_Name: FireWeapon
+  m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,6 +32,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2247208059139861414}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &7551168255189980179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567012562025724978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9457db4b8d2b9948a834ee47959e56d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mountConfig: {fileID: 11400000, guid: 55e91ae111209264f94fa3f1797920b2, type: 2}
 --- !u!1001 &1775850571825171533
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -111,31 +125,8 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1a4f0ff20bea9584e90c190ac5e189cb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3213582714593338450}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1a4f0ff20bea9584e90c190ac5e189cb, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2344300348532138177}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a4f0ff20bea9584e90c190ac5e189cb, type: 3}
---- !u!1 &1469439558912143644 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1a4f0ff20bea9584e90c190ac5e189cb, type: 3}
-  m_PrefabInstance: {fileID: 1775850571825171533}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2344300348532138177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1469439558912143644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb254bb081ae85e45815466f9eef1974, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePoint: {fileID: 3213582714593338450}
-  projectile: {fileID: 298989638786803696, guid: 46b92ae293bed454280510d018e26802, type: 3}
-  muzzleFlash: {fileID: 5551044978464968228, guid: faa8e8a4047518d459c42eba502d1833, type: 3}
 --- !u!4 &2247208059139861414 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1a4f0ff20bea9584e90c190ac5e189cb, type: 3}

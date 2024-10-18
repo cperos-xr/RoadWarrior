@@ -29,7 +29,7 @@ public class CreatedCarManager : MonoBehaviour
     public delegate void VehicleBodySelected(Vehicle vehicleBody);
     public static event VehicleBodySelected OnVehicleBodySelected;
 
-    public delegate void PrimaryWeaponSelected(Weapon primaryWeapon, FireWeapon fireWeapon);
+    public delegate void PrimaryWeaponSelected(Weapon primaryWeapon);
     public static event PrimaryWeaponSelected OnPrimaryWeaponSelected;
 
     private void OnEnable()
@@ -53,7 +53,7 @@ public class CreatedCarManager : MonoBehaviour
             }
             currentWeapon = Instantiate(weapon.model, weaponSpawn);
             FireWeapon fireWeapon = currentWeapon.GetComponent<FireWeapon>();
-            OnPrimaryWeaponSelected?.Invoke(weapon, fireWeapon);
+            OnPrimaryWeaponSelected?.Invoke(weapon);
         }
         else if (selectedPart is Vehicle selectedVehicle)
         {

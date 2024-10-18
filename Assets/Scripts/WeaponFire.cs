@@ -1,27 +1,22 @@
+using System.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class WeaponFire : MonoBehaviour
 {
     public PlayerInputContols input;
+    public Weapon weapon;
+
     public Transform firePoint;
-    
+
     private RaycastHit raycastHit;
-
-
-    [SerializeField] private float range;
-    [SerializeField] private float rateOfFire;
-    [SerializeField] private bool isAutomatic;
-    [SerializeField] private int magazineSize;
-    [SerializeField] private float reloadTime;
     [SerializeField] private int currentAmmo;
 
     [SerializeField] private bool isFiring = false;
     [SerializeField] private bool ready = true;
     [SerializeField] private bool reloading = false;
 
-    [SerializeField] private GameObject bulletHolePrefab;
-    [SerializeField] private float bulletHoleLifespan;
+    private int bulletsFired;
+
 
     void Awake()
     {
@@ -30,14 +25,31 @@ public class WeaponFire : MonoBehaviour
         input.Car.Fire.canceled += value => EndShot();
 
         input.Car.Reload.performed += value => Reload();
+    }
 
-        currentAmmo = magazineSize;
+    private void OnEnable()
+    {
+        input.Enable();
+        CreatedCarManager.OnPrimaryWeaponSelected += OnPrimaryWeaponSelected;
+    }
+
+    private void OnDisable()
+    {
+        input.Disable();
+        CreatedCarManager.OnPrimaryWeaponSelected -= OnPrimaryWeaponSelected;
+    }
+
+    private void OnPrimaryWeaponSelected(Weapon primaryWeapon)
+    {
+        weapon = primaryWeapon;
+        currentAmmo = weapon.magazineSize;
     }
 
     private void Update()
     {
         if (isFiring && ready && !reloading && currentAmmo > 0)
         {
+            bulletsFired = weapon.bulletsPerShot;
             PerformShot();
         }
     }
@@ -59,9 +71,12 @@ public class WeaponFire : MonoBehaviour
         Debug.Log("Shot Fired");
         ready = false;
 
-        Vector3 direction = firePoint.forward;
+        float x = Random.Range(-weapon.horizontalSpread, weapon.horizontalSpread);
+        float y = Random.Range(-weapon.verticalSpread, weapon.verticalSpread);
 
-        if (Physics.Raycast(firePoint.position, direction, out raycastHit, range))
+        Vector3 direction = firePoint.forward + new Vector3(x, y, 0);
+
+        if (Physics.Raycast(firePoint.position, direction, out raycastHit, weapon.range))
         {
             Debug.Log(raycastHit.transform.name);
 
@@ -71,51 +86,68 @@ public class WeaponFire : MonoBehaviour
             }
             else
             {
-                GameObject bulletHole = Instantiate(bulletHolePrefab, raycastHit.point + raycastHit.normal * 0.001f, Quaternion.LookRotation(raycastHit.normal));
-                Destroy(bulletHole, bulletHoleLifespan);
+                GameObject bulletHole = Instantiate(weapon.bulletHolePrefab, raycastHit.point + raycastHit.normal * 0.001f, Quaternion.LookRotation(raycastHit.normal));
+                Destroy(bulletHole, weapon.bulletHoleLifespan);
             }
 
         }
 
-        currentAmmo--;
+        // Play MuzzleFlash here
 
-        if (currentAmmo >= 0)
+        currentAmmo--;
+        bulletsFired--;
+
+        if (bulletsFired > 0 && currentAmmo > 0)
         {
-            Invoke("ResetShot", rateOfFire);
-            if (!isAutomatic)
+            StartCoroutine(ResumeBurstAfterDelay());
+        }
+        else
+        {
+            StartCoroutine(ResetShotAfterDelay());
+            if (!weapon.isAutomatic)
             {
                 EndShot();
             }
         }
     }
-
-    private void ResetShot()
+    private IEnumerator ResumeBurstAfterDelay()
     {
-        ready = true;  
+        yield return new WaitForSeconds(weapon.burstDelay);
+        ResumeBurst();
+    }
+
+    private void ResumeBurst()
+    {
+        ready = true;
+        PerformShot();
+    }
+
+    private IEnumerator ResetShotAfterDelay()
+    {
+        yield return new WaitForSeconds(weapon.fireRate);
+        ready = true;
     }
 
     private void Reload()
     {
-        reloading = true;
-        Invoke("ReloadComplete", reloadTime);
+        if (!reloading)
+        {
+            reloading = true;
+            StartCoroutine(ReloadAfterDelay(weapon.reloadTime));
+        }
+    }
+
+    private IEnumerator ReloadAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        ReloadComplete();
     }
 
     private void ReloadComplete()
     {
-        currentAmmo = magazineSize;
+        currentAmmo = weapon.magazineSize;
         reloading = false;
     }
-
-    private void OnEnable()
-    {
-        input.Enable();
-    }
-
-    private void OnDisable()
-    {
-        input.Disable();
-    }
-
 
 
 }

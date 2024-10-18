@@ -7,6 +7,11 @@ public class WeaponMountPoint : MonoBehaviour
     public delegate void ChangeMountPoint(GameObject myMountPoint, MountConfig mountConfig);
     public static event ChangeMountPoint OnChangeMountPoint;
 
+    private void Start()
+    {
+        OnChangeMountPoint?.Invoke(gameObject, mountConfig);
+    }
+
     private void OnEnable()
     {
         OnChangeMountPoint?.Invoke(gameObject, mountConfig);
