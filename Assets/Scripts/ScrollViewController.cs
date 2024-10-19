@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 
 public class ScrollViewController : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class ScrollViewController : MonoBehaviour
     // a event and delaegate can be added here to notify when the scroll is done
     public delegate void SelectedObject(VehiclePart selectedPart);
     public static event SelectedObject OnSelectedVehiclePart;
+
+    public TextMeshProUGUI debugText;
 
     private void Start()
     {
@@ -58,6 +61,10 @@ public class ScrollViewController : MonoBehaviour
     /// <param name="amount">The amount to scroll. Positive for right, negative for left.</param>
     private void OnScrollButtonClicked(float amount)
     {
+        if (debugText != null)
+        {
+            debugText.text = $"Button CLicked. Scrolling: {amount}";
+        }
         if (!isScrolling)
         {
             isScrolling = true;

@@ -10,21 +10,9 @@ namespace Unity.VRTemplate
     /// </summary>
     public class StepManager : MonoBehaviour
     {
-        [Serializable]
-        class Step
-        {
-            [SerializeField]
-            public GameObject stepObject;
 
-            [SerializeField]
-            public string buttonText;
-        }
-
-        [SerializeField]
         public TextMeshProUGUI m_StepButtonTextField;
-
-        [SerializeField]
-        List<Step> m_StepList = new List<Step>();
+        public List<Step> m_StepList = new List<Step>();
 
         int m_CurrentStepIndex = 0;
 
@@ -36,4 +24,12 @@ namespace Unity.VRTemplate
             m_StepButtonTextField.text = m_StepList[m_CurrentStepIndex].buttonText;
         }
     }
+
+    [Serializable]
+    public class Step
+    {
+        public GameObject stepObject;
+        public string buttonText;
+    }
+
 }

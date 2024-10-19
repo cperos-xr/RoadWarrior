@@ -251,6 +251,17 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""b4fe43e7-f573-45ff-bc6a-0102ed6b9ad0"",
+                    ""path"": ""<XRController>{RightHand}/{TriggerButton}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""7459c93a-fa16-4096-adab-75745e21b9f3"",
                     ""path"": ""<Keyboard>/r"",
                     ""interactions"": """",
@@ -264,6 +275,17 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""408885fe-2373-46b9-9a25-1425a5f03052"",
                     ""path"": ""<Keyboard>/numpadPlus"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Reload"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7bd954d8-d5a4-4092-adee-3a167742a717"",
+                    ""path"": ""<XRController>{RightHand}/{GripButton}"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

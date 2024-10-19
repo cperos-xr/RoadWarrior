@@ -32,14 +32,24 @@ public class CreatedCarManager : MonoBehaviour
     public delegate void PrimaryWeaponSelected(Weapon primaryWeapon);
     public static event PrimaryWeaponSelected OnPrimaryWeaponSelected;
 
+    public bool isXR;
+
     private void OnEnable()
     {
         ScrollViewController.OnSelectedVehiclePart += OnSelectedPart;
+        if (isXR)
+        {
+            ScrollImageXR.OnSelectedVehiclePart += OnSelectedPart;
+        }
     }
 
     private void OnDisable()
     {
         ScrollViewController.OnSelectedVehiclePart -= OnSelectedPart;
+        if (isXR)
+        {
+            ScrollImageXR.OnSelectedVehiclePart -= OnSelectedPart;
+        }
     }
 
     private void OnSelectedPart(VehiclePart selectedPart)
@@ -77,9 +87,6 @@ public class CreatedCarManager : MonoBehaviour
             currentWheelTransforms = wheelSet.wheelTransforms;
             OnWheelsSelected?.Invoke(wheelSet);
         }
-        else
-        {
-            Debug.Log("Selected part " + selectedPart.name + " was not of known type");
-        }
+
     }
 }

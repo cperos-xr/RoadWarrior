@@ -6850,12 +6850,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 0}
   firePoint: {fileID: 537425739}
+  weaponTurret: {fileID: 1250801109}
   currentAmmo: 0
   isFiring: 0
   ready: 1
   reloading: 0
   muzzleFlash: {fileID: 1592454408}
   bulletshell: {fileID: 266276917}
+  rotationValue: 0
+  rotationSpeed: 10
 --- !u!1 &1186552764
 GameObject:
   m_ObjectHideFlags: 0
