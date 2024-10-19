@@ -128,6 +128,39 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "1D Axis",
+                    "id": "9318d8e6-9e9e-4b5c-8ff3-6964d7325c21",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Throttle",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "d8140875-d275-4d56-b25a-47024a4a9c3f",
+                    "path": "<XRController>{RightHand}/{GripButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Throttle",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "4d2ffe69-09e3-41a3-8fa8-9814c6fd9835",
+                    "path": "<XRController>{RightHand}/thumbstickDpadDown",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Throttle",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "Keyboard",
                     "id": "a0b4596d-b827-4403-9d88-e685cf00f0a9",
                     "path": "1DAxis",
@@ -186,6 +219,39 @@
                     "name": "positive",
                     "id": "df0729b2-5bb1-4e9e-8b45-24ff30a138dc",
                     "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Steering",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "e37d9473-75d6-4046-b4c3-81288b010cd6",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Steering",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "a061b555-f760-4d75-a6ab-a292a6975b79",
+                    "path": "<XRController>{RightHand}/thumbstickDpadLeft",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Steering",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "98e13e8a-0049-4942-91cf-ea96f574fa2b",
+                    "path": "<XRController>{RightHand}/thumbstickDpadRight",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -262,7 +328,7 @@
                 {
                     "name": "",
                     "id": "7bd954d8-d5a4-4092-adee-3a167742a717",
-                    "path": "<XRController>{RightHand}/{GripButton}",
+                    "path": "<XRController>{RightHand}/{PrimaryButton}",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
