@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a6c2621a54e853458f6d024246ae2d3, type: 3}
-  m_Name: player_spawn_inside_car
+  m_Name: playerSpawnDrivingPosition
   m_EditorClassIdentifier: 
   mountType: 
   positionOffset: {x: 0, y: 0, z: 0}

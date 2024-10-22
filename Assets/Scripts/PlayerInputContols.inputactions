@@ -810,6 +810,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "CyclePlayerPosition",
+                    "type": "Button",
+                    "id": "1f64aebb-d551-4e17-adf6-cc18600ed5e9",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1142,6 +1151,28 @@
                     "action": "Aim",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "1b82c5dc-5661-4b42-b7c4-8c5b30d01092",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CyclePlayerPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3e2445c1-3375-49cd-a742-a6af0294bbe0",
+                    "path": "<Keyboard>/numpad0",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CyclePlayerPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },

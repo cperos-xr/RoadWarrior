@@ -21,7 +21,8 @@ public class CreateDrivableCar : MonoBehaviour
 
     public bool isXR = false;
 
-    
+    public delegate void DrivableCarCreated();
+    public static event DrivableCarCreated OnDrivableCarCreated;
 
     public void CreateVehicle()
     {
@@ -52,9 +53,11 @@ public class CreateDrivableCar : MonoBehaviour
             obj.SetActive(true);
         }
 
-        // Set the XR Origin to the player spawn locaction and make it a child of the player spawn location
-        XROrigin.transform.SetParent(PlayerLocation);
-        XROrigin.transform.position = PlayerLocation.position;
-        XROrigin.transform.rotation = PlayerLocation.rotation;
+        OnDrivableCarCreated?.Invoke();
+
+        //// Set the XR Origin to the player spawn locaction and make it a child of the player spawn location
+        //XROrigin.transform.SetParent(PlayerLocation);
+        //XROrigin.transform.position = PlayerLocation.position;
+        //XROrigin.transform.rotation = PlayerLocation.rotation;
     }
 }

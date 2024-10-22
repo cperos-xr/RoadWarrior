@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partName: V8 Interceptor
   icon: {fileID: 2800000, guid: 58622ba98e79ce24a86ffdb3b6ef06f9, type: 3}
-  model: {fileID: 1227991545504878559, guid: 3ab74521df35d8b448fb6c3a9249434b, type: 3}
+  model: {fileID: 1227991545504878559, guid: 95c2ca04e8c14b641957db203d982cfc, type: 3}
   weight: 1300
   cost: 1000
   topSpeed: 120
