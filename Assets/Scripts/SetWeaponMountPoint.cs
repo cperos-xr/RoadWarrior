@@ -4,6 +4,7 @@ public class SetMountPoint : MonoBehaviour
 {
     public MountConfig mountConfig; // This should match the mountConfig of the correct mount point
 
+
     private void OnEnable()
     {
         WeaponMountPoint.OnChangeMountPoint += SetMyPosition;
@@ -30,6 +31,7 @@ public class SetMountPoint : MonoBehaviour
 
             // Return to the original parent
             transform.SetParent(originalParent);
+
         }
         else
         {

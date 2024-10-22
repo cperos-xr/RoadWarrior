@@ -62,12 +62,11 @@ public class PlayerCarInput : MonoBehaviour
         ApplySteering(thumbstickInput.x);            
     }
 
-    private void ApplyThrottle(float value)
-    {
-        // Directly set the throttle input based on the thumbstick's Y value
-        throttleInput = value;
-    }
-
+    //private void ApplyThrottle(float value)
+    //{
+    //    // Directly set the throttle input based on the thumbstick's Y value
+    //    throttleInput = value;
+    //}
 
 
     private void ApplySteering(float value)
@@ -79,7 +78,6 @@ public class PlayerCarInput : MonoBehaviour
     private void OnThumbstickRelease(InputAction.CallbackContext context)
     {
         thumbstickInput = Vector2.zero;
-        ApplyThrottle(0);
         ApplySteering(0);
     }
 

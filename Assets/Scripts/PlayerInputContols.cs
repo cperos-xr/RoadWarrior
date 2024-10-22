@@ -912,8 +912,8 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""9318d8e6-9e9e-4b5c-8ff3-6964d7325c21"",
+                    ""name"": ""XR Controller"",
+                    ""id"": ""3b8f6a18-41dc-494c-8896-9bc1c9aee3a5"",
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -924,8 +924,19 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Positive"",
-                    ""id"": ""d8140875-d275-4d56-b25a-47024a4a9c3f"",
-                    ""path"": ""<XRController>{RightHand}/{GripButton}"",
+                    ""id"": ""ae706d5f-3696-430d-a15e-34e9ed6dca27"",
+                    ""path"": ""<XRController>{LeftHand}/{SecondaryButton}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Throttle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Negative"",
+                    ""id"": ""3eca5d58-2744-4b20-ac66-02b6f697daca"",
+                    ""path"": ""<XRController>{LeftHand}/{PrimaryButton}"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -1000,39 +1011,6 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""e37d9473-75d6-4046-b4c3-81288b010cd6"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Steering"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""a061b555-f760-4d75-a6ab-a292a6975b79"",
-                    ""path"": ""<XRController>{RightHand}/thumbstickDpadLeft"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Steering"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""98e13e8a-0049-4942-91cf-ea96f574fa2b"",
-                    ""path"": ""<XRController>{RightHand}/thumbstickDpadRight"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Steering"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": """",
                     ""id"": ""d82d314b-00ff-45b8-9a94-1f1adc0093b0"",
                     ""path"": ""<Keyboard>/space"",
@@ -1068,7 +1046,7 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""b4fe43e7-f573-45ff-bc6a-0102ed6b9ad0"",
-                    ""path"": ""<XRController>{RightHand}/{TriggerButton}"",
+                    ""path"": ""<XRController>{LeftHand}/{TriggerButton}"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -1101,6 +1079,17 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""7bd954d8-d5a4-4092-adee-3a167742a717"",
+                    ""path"": ""<XRController>{LeftHand}/joystickClicked"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Reload"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c255e1bd-5973-48c5-a908-b1cb896303f9"",
                     ""path"": ""<XRController>{RightHand}/{PrimaryButton}"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -1190,6 +1179,17 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""3e2445c1-3375-49cd-a742-a6af0294bbe0"",
                     ""path"": ""<Keyboard>/numpad0"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CyclePlayerPosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""64264e89-53b7-4e71-8c4d-89065fc02b17"",
+                    ""path"": ""<XRController>{RightHand}/{SecondaryButton}"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
