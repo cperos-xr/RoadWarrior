@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a023da4ec117a848b966d1a0f345cfc, type: 3}
+  m_Name: Bugatti
+  m_EditorClassIdentifier: 
+  partName: Bugatti 35
+  icon: {fileID: 2800000, guid: a5a30fc9047f28b4c94f7aa15997e65c, type: 3}
+  model: {fileID: 9035567545287938318, guid: 29f1d6515db19a44eba6ad7557ef3565, type: 3}
+  weight: 800
+  cost: 4000
+  topSpeed: 150
+  acceleration: 12
+  motorForce: 1000
+  brakeForce: 50000
+  maxSteerAngle: 30
+  mass: 1200
+  drag: 0.1
+  angularDrag: 0.05
+  frontWheelScale: {x: 1, y: 1, z: 1}
+  rearWheelScale: {x: 1, y: 1, z: 1}
+  center: {x: -0.0000001685866, y: 1.010027, z: -0.4446536}
+  size: {x: 1.940001, y: 0.9738767, z: 4.390514}
+  vehicleType: 2

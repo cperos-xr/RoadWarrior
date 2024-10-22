@@ -25,6 +25,758 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
     ""name"": ""PlayerInputContols"",
     ""maps"": [
         {
+            ""name"": ""XRI Right"",
+            ""id"": ""dce83a48-e0a2-4713-8476-0d93273830f1"",
+            ""actions"": [
+                {
+                    ""name"": ""Position"",
+                    ""type"": ""Value"",
+                    ""id"": ""c8753aac-27e8-47e4-aae7-b0f8b1a5de53"",
+                    ""expectedControlType"": ""Vector3"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Rotation"",
+                    ""type"": ""Value"",
+                    ""id"": ""c46c9883-405a-4e2c-b55d-c28e145e5d3e"",
+                    ""expectedControlType"": ""Quaternion"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Is Tracked"",
+                    ""type"": ""Button"",
+                    ""id"": ""a138ac92-4f43-474c-a599-5ed0315d1c96"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Tracking State"",
+                    ""type"": ""Value"",
+                    ""id"": ""09b33bd0-b6f0-430c-ba3e-0cb39cccb9db"",
+                    ""expectedControlType"": ""Integer"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Haptic Device"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""a0a12e15-c3b6-457a-b2fc-f72306610ee5"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Aim Position"",
+                    ""type"": ""Value"",
+                    ""id"": ""75d3e27c-fba1-4153-ace7-f672a740efc3"",
+                    ""expectedControlType"": ""Vector3"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Aim Rotation"",
+                    ""type"": ""Value"",
+                    ""id"": ""919386f5-d3a7-441e-8f0c-873417c3a59e"",
+                    ""expectedControlType"": ""Quaternion"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Aim Flags"",
+                    ""type"": ""Value"",
+                    ""id"": ""9ac17630-66c5-4300-96e5-fb63b66f8eda"",
+                    ""expectedControlType"": ""Integer"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Pinch Position"",
+                    ""type"": ""Value"",
+                    ""id"": ""aaee8651-9029-41b2-bce2-31f3c877e37f"",
+                    ""expectedControlType"": ""Vector3"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Poke Position"",
+                    ""type"": ""Value"",
+                    ""id"": ""a6ee3dc7-38ed-49d5-9571-1bcc1dd842ff"",
+                    ""expectedControlType"": ""Vector3"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Poke Rotation"",
+                    ""type"": ""Value"",
+                    ""id"": ""158165b9-b5bd-4732-8422-6c6d2bcc6724"",
+                    ""expectedControlType"": ""Quaternion"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Grip Position"",
+                    ""type"": ""Value"",
+                    ""id"": ""33958cea-da59-46f0-ad63-13901a6da05d"",
+                    ""expectedControlType"": ""Vector3"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Grip Rotation"",
+                    ""type"": ""Value"",
+                    ""id"": ""b6e8f961-9732-4329-8ed8-adeab48278a3"",
+                    ""expectedControlType"": ""Quaternion"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Thumbstick"",
+                    ""type"": ""Value"",
+                    ""id"": ""ad0243e3-3b74-4df2-87bb-dbf0bf599d08"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""Quaternion Fallback"",
+                    ""id"": ""82f81c34-2b84-46c3-8859-504fdcdfefee"",
+                    ""path"": ""QuaternionFallback"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""first"",
+                    ""id"": ""07c21d0d-0609-46b1-a577-1a18f61308d6"",
+                    ""path"": ""<XRController>{RightHand}/pointerRotation"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""second"",
+                    ""id"": ""c6e440a4-005a-4756-be80-5aa9e5f12d9a"",
+                    ""path"": ""<XRController>{RightHand}/deviceRotation"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""third"",
+                    ""id"": ""c07f2bc2-816f-429f-8251-298d62a79401"",
+                    ""path"": ""<XRHandDevice>{RightHand}/deviceRotation"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Vector 3 Fallback"",
+                    ""id"": ""51fa3238-e71d-46eb-9600-12328b6f3df4"",
+                    ""path"": ""Vector3Fallback"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Position"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""first"",
+                    ""id"": ""0b2d8f69-909f-4b7f-b4e6-0ed6e2f5bd09"",
+                    ""path"": ""<XRController>{RightHand}/pointerPosition"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Position"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""second"",
+                    ""id"": ""e893722c-a1e4-4c54-a9b9-a9e592c0c466"",
+                    ""path"": ""<XRController>{RightHand}/devicePosition"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Position"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""third"",
+                    ""id"": ""6ecc1fb4-5cc1-4b76-b3ac-3c4a7dff3256"",
+                    ""path"": ""<XRHandDevice>{RightHand}/devicePosition"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Position"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f5534064-f277-40e0-a1fc-7bd60fb335b5"",
+                    ""path"": ""<XRController>{RightHand}/*"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Haptic Device"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""17fa5280-1870-4e4f-9cc6-9030e6f76f5d"",
+                    ""path"": ""<XRController>{RightHand}/trackingState"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Tracking State"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""40ba71d0-da81-4a13-8d98-cb1152430a5e"",
+                    ""path"": ""<XRHandDevice>{RightHand}/trackingState"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Tracking State"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bc3af39b-3a91-4126-a8f9-adcf4721b8b3"",
+                    ""path"": ""<MetaAimHand>{RightHand}/devicePosition"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Aim Position"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a66d3ca0-d5ef-4fda-9502-204f32bb0c87"",
+                    ""path"": ""<MetaAimHand>{RightHand}/deviceRotation"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Aim Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cf3a5f31-b478-4893-b444-db9405bc1058"",
+                    ""path"": ""<XRHandDevice>{RightHand}/pinchPosition"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pinch Position"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0c94b16f-7be2-404f-8d14-776fffae8266"",
+                    ""path"": ""<XRHandDevice>{RightHand}/pokePosition"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Poke Position"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5becf3da-d454-4c44-855b-28f135e3f31b"",
+                    ""path"": ""<XRHandDevice>{RightHand}/pokeRotation"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Poke Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""773ce1a4-06f4-4a95-a899-a43fff46f53b"",
+                    ""path"": ""<XRController>{RightHand}/isTracked"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Is Tracked"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e3314ff9-c7d1-4a58-8d49-4997c72cb190"",
+                    ""path"": ""<XRHandDevice>{RightHand}/isTracked"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Is Tracked"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a1c59fcc-11eb-47c2-9d1e-60fe0bee8327"",
+                    ""path"": ""<MetaAimHand>{RightHand}/aimFlags"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Aim Flags"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d2f364e2-caf0-4f73-9062-fd2cecced7c8"",
+                    ""path"": ""<XRHandDevice>{RightHand}/gripPosition"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Grip Position"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fc7188c8-ab59-4bd9-b80a-f995d303240b"",
+                    ""path"": ""<XRHandDevice>{RightHand}/gripRotation"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Grip Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c7bcff12-611b-4d94-8464-45d2b08f2577"",
+                    ""path"": ""<XRController>{RightHand}/{Primary2DAxis}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Thumbstick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""XRI Left"",
+            ""id"": ""81f7ffed-59ec-4141-beda-c125dfb59303"",
+            ""actions"": [
+                {
+                    ""name"": ""Position"",
+                    ""type"": ""Value"",
+                    ""id"": ""606d0000-e535-464a-8acb-e61d160a6a25"",
+                    ""expectedControlType"": ""Vector3"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Rotation"",
+                    ""type"": ""Value"",
+                    ""id"": ""898f1dbf-54ca-41f6-a5b4-26daa8bb09b4"",
+                    ""expectedControlType"": ""Quaternion"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Is Tracked"",
+                    ""type"": ""Button"",
+                    ""id"": ""b425705c-ec83-49c4-8d3c-2a7fc4ec2120"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Tracking State"",
+                    ""type"": ""Value"",
+                    ""id"": ""eb5834a4-9be7-4e6e-af60-7ef06cdec05f"",
+                    ""expectedControlType"": ""Integer"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Haptic Device"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""b3104585-6602-4b64-9495-6058c41d079e"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Aim Position"",
+                    ""type"": ""Value"",
+                    ""id"": ""07703123-9dcd-4fe7-90c0-5a2154b22703"",
+                    ""expectedControlType"": ""Vector3"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Aim Rotation"",
+                    ""type"": ""Value"",
+                    ""id"": ""6f84280b-6ef5-4ee4-8352-f5a9aca9c357"",
+                    ""expectedControlType"": ""Quaternion"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Aim Flags"",
+                    ""type"": ""Value"",
+                    ""id"": ""00d7291a-1536-4f23-9644-1f63278d355e"",
+                    ""expectedControlType"": ""Integer"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Pinch Position"",
+                    ""type"": ""Value"",
+                    ""id"": ""172174e7-fde5-4028-ac41-58995d6aad94"",
+                    ""expectedControlType"": ""Vector3"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Poke Position"",
+                    ""type"": ""Value"",
+                    ""id"": ""25fa2a12-5c19-4316-bdd4-0c53d374a5a7"",
+                    ""expectedControlType"": ""Vector3"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Poke Rotation"",
+                    ""type"": ""Value"",
+                    ""id"": ""eaf12912-3578-4ae9-97d3-02630089a97e"",
+                    ""expectedControlType"": ""Quaternion"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Grip Position"",
+                    ""type"": ""Value"",
+                    ""id"": ""bcbaae65-a55a-46db-b0fc-63141067380a"",
+                    ""expectedControlType"": ""Vector3"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Grip Rotation"",
+                    ""type"": ""Value"",
+                    ""id"": ""751a68b6-c7e9-455c-a820-ddaa9e6fbd33"",
+                    ""expectedControlType"": ""Quaternion"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Thumbstick"",
+                    ""type"": ""Value"",
+                    ""id"": ""2d0f145f-9929-4b56-8b03-bb904e029726"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""Quaternion Fallback"",
+                    ""id"": ""80e33355-9ee8-4d64-a10b-1ae538fe11f2"",
+                    ""path"": ""QuaternionFallback"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""first"",
+                    ""id"": ""d8eaa34f-da2d-40a6-ae03-252351325b47"",
+                    ""path"": ""<XRController>{LeftHand}/pointerRotation"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""second"",
+                    ""id"": ""ee7364ed-013e-46e2-b44d-27811c9cd4c6"",
+                    ""path"": ""<XRController>{LeftHand}/deviceRotation"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""third"",
+                    ""id"": ""f9ac2be0-323b-43f2-9408-01a3e3eeef48"",
+                    ""path"": ""<XRHandDevice>{LeftHand}/deviceRotation"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Vector 3 Fallback"",
+                    ""id"": ""a2cb4899-98a8-418f-a149-c19be1444bfb"",
+                    ""path"": ""Vector3Fallback"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Position"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""first"",
+                    ""id"": ""dcfa0f10-b33b-4482-abb5-ba1d2839f843"",
+                    ""path"": ""<XRController>{LeftHand}/pointerPosition"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Position"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""second"",
+                    ""id"": ""39f8ebc2-e514-4031-af38-ba9a798db86e"",
+                    ""path"": ""<XRController>{LeftHand}/devicePosition"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Position"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""third"",
+                    ""id"": ""9cab1c46-2f74-473c-94bb-23933646c74a"",
+                    ""path"": ""<XRHandDevice>{LeftHand}/devicePosition"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Position"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bfb0c222-ef46-47f8-b33a-00b3d77fa6bc"",
+                    ""path"": ""<XRController>{LeftHand}/*"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Haptic Device"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cad0ed0b-cc0a-4ae2-8535-0c6477dd2be9"",
+                    ""path"": ""<XRController>{LeftHand}/trackingState"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Tracking State"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a4d6f951-1920-437e-b04c-a56e6e18c252"",
+                    ""path"": ""<XRHandDevice>{LeftHand}/trackingState"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Tracking State"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ac4e7c51-a7e7-423d-8eb6-97d191b65b9d"",
+                    ""path"": ""<MetaAimHand>{LeftHand}/devicePosition"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Aim Position"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""64f5b84b-3261-4b82-8565-4657ce97a37d"",
+                    ""path"": ""<MetaAimHand>{LeftHand}/deviceRotation"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Aim Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2a102a79-3e66-4a98-8ea6-e42c4f4feb21"",
+                    ""path"": ""<XRHandDevice>{LeftHand}/pinchPosition"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pinch Position"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f145b6e1-000a-42c4-b1cf-dca0ffd3ccbb"",
+                    ""path"": ""<XRHandDevice>{LeftHand}/pokePosition"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Poke Position"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""83dfd2ce-b501-486e-a500-22bb7ab837d3"",
+                    ""path"": ""<XRHandDevice>{LeftHand}/pokeRotation"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Poke Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""497ce580-9ba1-4dfb-9c04-d4806950f6f7"",
+                    ""path"": ""<XRController>{LeftHand}/isTracked"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Is Tracked"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""94f7b50a-966c-47d9-97bf-1e878d1c9574"",
+                    ""path"": ""<XRHandDevice>{LeftHand}/isTracked"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Is Tracked"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8407bbe0-669d-422d-b375-fc50c11e6300"",
+                    ""path"": ""<MetaAimHand>{LeftHand}/aimFlags"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Aim Flags"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""471a837e-0c2f-475d-a4ba-6bed9b0f1a14"",
+                    ""path"": ""<XRHandDevice>{LeftHand}/gripPosition"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Grip Position"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4f177228-5bbe-4abf-a48d-811f1af51ee2"",
+                    ""path"": ""<XRHandDevice>{LeftHand}/gripRotation"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Grip Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3419d6aa-73b1-4b23-8d39-7891ee1236d6"",
+                    ""path"": ""<XRController>{LeftHand}/{Primary2DAxis}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Thumbstick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
             ""name"": ""Car"",
             ""id"": ""c9a8a596-f79f-4ef9-b016-3aefc4ae8e41"",
             ""actions"": [
@@ -97,8 +849,8 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Positive"",
-                    ""id"": ""41bb3173-14e1-4069-895f-8dc1919e4948"",
-                    ""path"": ""<Keyboard>/s"",
+                    ""id"": ""c949b1ed-597b-43bb-a9b7-dda1c6b49091"",
+                    ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -108,8 +860,8 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Negative"",
-                    ""id"": ""c949b1ed-597b-43bb-a9b7-dda1c6b49091"",
-                    ""path"": ""<Keyboard>/w"",
+                    ""id"": ""41bb3173-14e1-4069-895f-8dc1919e4948"",
+                    ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -130,8 +882,8 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Positive"",
-                    ""id"": ""77b22190-2d94-41c1-a333-3924b6d18a83"",
-                    ""path"": ""<Keyboard>/downArrow"",
+                    ""id"": ""708861e7-0b12-4652-8070-f7371672c029"",
+                    ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -141,8 +893,8 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Negative"",
-                    ""id"": ""708861e7-0b12-4652-8070-f7371672c029"",
-                    ""path"": ""<Keyboard>/upArrow"",
+                    ""id"": ""77b22190-2d94-41c1-a333-3924b6d18a83"",
+                    ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -162,20 +914,9 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
+                    ""name"": ""Positive"",
                     ""id"": ""d8140875-d275-4d56-b25a-47024a4a9c3f"",
                     ""path"": ""<XRController>{RightHand}/{GripButton}"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Throttle"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""4d2ffe69-09e3-41a3-8fa8-9814c6fd9835"",
-                    ""path"": ""<XRController>{RightHand}/thumbstickDpadDown"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -426,10 +1167,90 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 }
             ]
+        },
+        {
+            ""name"": ""XRController"",
+            ""id"": ""b4be3a53-ab7e-4da6-81bf-c05c7268eb20"",
+            ""actions"": [
+                {
+                    ""name"": ""ThumbstickLeft"",
+                    ""type"": ""Value"",
+                    ""id"": ""f732250c-c756-48d9-a501-e95fbc40ddc1"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""ThumbstickRight"",
+                    ""type"": ""Value"",
+                    ""id"": ""c8ad6c4e-2b28-4597-a1be-5046e5eb11ab"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""f8eb3a46-3f8f-4905-86e9-580578d72f8d"",
+                    ""path"": ""<XRController>{LeftHand}/{Primary2DAxis}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ThumbstickLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""96fd9d51-301d-483b-8fc3-6b13cae82afa"",
+                    ""path"": ""<XRController>{RightHand}/{Primary2DAxis}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ThumbstickRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
 }");
+        // XRI Right
+        m_XRIRight = asset.FindActionMap("XRI Right", throwIfNotFound: true);
+        m_XRIRight_Position = m_XRIRight.FindAction("Position", throwIfNotFound: true);
+        m_XRIRight_Rotation = m_XRIRight.FindAction("Rotation", throwIfNotFound: true);
+        m_XRIRight_IsTracked = m_XRIRight.FindAction("Is Tracked", throwIfNotFound: true);
+        m_XRIRight_TrackingState = m_XRIRight.FindAction("Tracking State", throwIfNotFound: true);
+        m_XRIRight_HapticDevice = m_XRIRight.FindAction("Haptic Device", throwIfNotFound: true);
+        m_XRIRight_AimPosition = m_XRIRight.FindAction("Aim Position", throwIfNotFound: true);
+        m_XRIRight_AimRotation = m_XRIRight.FindAction("Aim Rotation", throwIfNotFound: true);
+        m_XRIRight_AimFlags = m_XRIRight.FindAction("Aim Flags", throwIfNotFound: true);
+        m_XRIRight_PinchPosition = m_XRIRight.FindAction("Pinch Position", throwIfNotFound: true);
+        m_XRIRight_PokePosition = m_XRIRight.FindAction("Poke Position", throwIfNotFound: true);
+        m_XRIRight_PokeRotation = m_XRIRight.FindAction("Poke Rotation", throwIfNotFound: true);
+        m_XRIRight_GripPosition = m_XRIRight.FindAction("Grip Position", throwIfNotFound: true);
+        m_XRIRight_GripRotation = m_XRIRight.FindAction("Grip Rotation", throwIfNotFound: true);
+        m_XRIRight_Thumbstick = m_XRIRight.FindAction("Thumbstick", throwIfNotFound: true);
+        // XRI Left
+        m_XRILeft = asset.FindActionMap("XRI Left", throwIfNotFound: true);
+        m_XRILeft_Position = m_XRILeft.FindAction("Position", throwIfNotFound: true);
+        m_XRILeft_Rotation = m_XRILeft.FindAction("Rotation", throwIfNotFound: true);
+        m_XRILeft_IsTracked = m_XRILeft.FindAction("Is Tracked", throwIfNotFound: true);
+        m_XRILeft_TrackingState = m_XRILeft.FindAction("Tracking State", throwIfNotFound: true);
+        m_XRILeft_HapticDevice = m_XRILeft.FindAction("Haptic Device", throwIfNotFound: true);
+        m_XRILeft_AimPosition = m_XRILeft.FindAction("Aim Position", throwIfNotFound: true);
+        m_XRILeft_AimRotation = m_XRILeft.FindAction("Aim Rotation", throwIfNotFound: true);
+        m_XRILeft_AimFlags = m_XRILeft.FindAction("Aim Flags", throwIfNotFound: true);
+        m_XRILeft_PinchPosition = m_XRILeft.FindAction("Pinch Position", throwIfNotFound: true);
+        m_XRILeft_PokePosition = m_XRILeft.FindAction("Poke Position", throwIfNotFound: true);
+        m_XRILeft_PokeRotation = m_XRILeft.FindAction("Poke Rotation", throwIfNotFound: true);
+        m_XRILeft_GripPosition = m_XRILeft.FindAction("Grip Position", throwIfNotFound: true);
+        m_XRILeft_GripRotation = m_XRILeft.FindAction("Grip Rotation", throwIfNotFound: true);
+        m_XRILeft_Thumbstick = m_XRILeft.FindAction("Thumbstick", throwIfNotFound: true);
         // Car
         m_Car = asset.FindActionMap("Car", throwIfNotFound: true);
         m_Car_Throttle = m_Car.FindAction("Throttle", throwIfNotFound: true);
@@ -438,11 +1259,18 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
         m_Car_Fire = m_Car.FindAction("Fire", throwIfNotFound: true);
         m_Car_Reload = m_Car.FindAction("Reload", throwIfNotFound: true);
         m_Car_Aim = m_Car.FindAction("Aim", throwIfNotFound: true);
+        // XRController
+        m_XRController = asset.FindActionMap("XRController", throwIfNotFound: true);
+        m_XRController_ThumbstickLeft = m_XRController.FindAction("ThumbstickLeft", throwIfNotFound: true);
+        m_XRController_ThumbstickRight = m_XRController.FindAction("ThumbstickRight", throwIfNotFound: true);
     }
 
     ~@PlayerInputContols()
     {
+        Debug.Assert(!m_XRIRight.enabled, "This will cause a leak and performance issues, PlayerInputContols.XRIRight.Disable() has not been called.");
+        Debug.Assert(!m_XRILeft.enabled, "This will cause a leak and performance issues, PlayerInputContols.XRILeft.Disable() has not been called.");
         Debug.Assert(!m_Car.enabled, "This will cause a leak and performance issues, PlayerInputContols.Car.Disable() has not been called.");
+        Debug.Assert(!m_XRController.enabled, "This will cause a leak and performance issues, PlayerInputContols.XRController.Disable() has not been called.");
     }
 
     public void Dispose()
@@ -500,6 +1328,306 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
     {
         return asset.FindBinding(bindingMask, out action);
     }
+
+    // XRI Right
+    private readonly InputActionMap m_XRIRight;
+    private List<IXRIRightActions> m_XRIRightActionsCallbackInterfaces = new List<IXRIRightActions>();
+    private readonly InputAction m_XRIRight_Position;
+    private readonly InputAction m_XRIRight_Rotation;
+    private readonly InputAction m_XRIRight_IsTracked;
+    private readonly InputAction m_XRIRight_TrackingState;
+    private readonly InputAction m_XRIRight_HapticDevice;
+    private readonly InputAction m_XRIRight_AimPosition;
+    private readonly InputAction m_XRIRight_AimRotation;
+    private readonly InputAction m_XRIRight_AimFlags;
+    private readonly InputAction m_XRIRight_PinchPosition;
+    private readonly InputAction m_XRIRight_PokePosition;
+    private readonly InputAction m_XRIRight_PokeRotation;
+    private readonly InputAction m_XRIRight_GripPosition;
+    private readonly InputAction m_XRIRight_GripRotation;
+    private readonly InputAction m_XRIRight_Thumbstick;
+    public struct XRIRightActions
+    {
+        private @PlayerInputContols m_Wrapper;
+        public XRIRightActions(@PlayerInputContols wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Position => m_Wrapper.m_XRIRight_Position;
+        public InputAction @Rotation => m_Wrapper.m_XRIRight_Rotation;
+        public InputAction @IsTracked => m_Wrapper.m_XRIRight_IsTracked;
+        public InputAction @TrackingState => m_Wrapper.m_XRIRight_TrackingState;
+        public InputAction @HapticDevice => m_Wrapper.m_XRIRight_HapticDevice;
+        public InputAction @AimPosition => m_Wrapper.m_XRIRight_AimPosition;
+        public InputAction @AimRotation => m_Wrapper.m_XRIRight_AimRotation;
+        public InputAction @AimFlags => m_Wrapper.m_XRIRight_AimFlags;
+        public InputAction @PinchPosition => m_Wrapper.m_XRIRight_PinchPosition;
+        public InputAction @PokePosition => m_Wrapper.m_XRIRight_PokePosition;
+        public InputAction @PokeRotation => m_Wrapper.m_XRIRight_PokeRotation;
+        public InputAction @GripPosition => m_Wrapper.m_XRIRight_GripPosition;
+        public InputAction @GripRotation => m_Wrapper.m_XRIRight_GripRotation;
+        public InputAction @Thumbstick => m_Wrapper.m_XRIRight_Thumbstick;
+        public InputActionMap Get() { return m_Wrapper.m_XRIRight; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(XRIRightActions set) { return set.Get(); }
+        public void AddCallbacks(IXRIRightActions instance)
+        {
+            if (instance == null || m_Wrapper.m_XRIRightActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_XRIRightActionsCallbackInterfaces.Add(instance);
+            @Position.started += instance.OnPosition;
+            @Position.performed += instance.OnPosition;
+            @Position.canceled += instance.OnPosition;
+            @Rotation.started += instance.OnRotation;
+            @Rotation.performed += instance.OnRotation;
+            @Rotation.canceled += instance.OnRotation;
+            @IsTracked.started += instance.OnIsTracked;
+            @IsTracked.performed += instance.OnIsTracked;
+            @IsTracked.canceled += instance.OnIsTracked;
+            @TrackingState.started += instance.OnTrackingState;
+            @TrackingState.performed += instance.OnTrackingState;
+            @TrackingState.canceled += instance.OnTrackingState;
+            @HapticDevice.started += instance.OnHapticDevice;
+            @HapticDevice.performed += instance.OnHapticDevice;
+            @HapticDevice.canceled += instance.OnHapticDevice;
+            @AimPosition.started += instance.OnAimPosition;
+            @AimPosition.performed += instance.OnAimPosition;
+            @AimPosition.canceled += instance.OnAimPosition;
+            @AimRotation.started += instance.OnAimRotation;
+            @AimRotation.performed += instance.OnAimRotation;
+            @AimRotation.canceled += instance.OnAimRotation;
+            @AimFlags.started += instance.OnAimFlags;
+            @AimFlags.performed += instance.OnAimFlags;
+            @AimFlags.canceled += instance.OnAimFlags;
+            @PinchPosition.started += instance.OnPinchPosition;
+            @PinchPosition.performed += instance.OnPinchPosition;
+            @PinchPosition.canceled += instance.OnPinchPosition;
+            @PokePosition.started += instance.OnPokePosition;
+            @PokePosition.performed += instance.OnPokePosition;
+            @PokePosition.canceled += instance.OnPokePosition;
+            @PokeRotation.started += instance.OnPokeRotation;
+            @PokeRotation.performed += instance.OnPokeRotation;
+            @PokeRotation.canceled += instance.OnPokeRotation;
+            @GripPosition.started += instance.OnGripPosition;
+            @GripPosition.performed += instance.OnGripPosition;
+            @GripPosition.canceled += instance.OnGripPosition;
+            @GripRotation.started += instance.OnGripRotation;
+            @GripRotation.performed += instance.OnGripRotation;
+            @GripRotation.canceled += instance.OnGripRotation;
+            @Thumbstick.started += instance.OnThumbstick;
+            @Thumbstick.performed += instance.OnThumbstick;
+            @Thumbstick.canceled += instance.OnThumbstick;
+        }
+
+        private void UnregisterCallbacks(IXRIRightActions instance)
+        {
+            @Position.started -= instance.OnPosition;
+            @Position.performed -= instance.OnPosition;
+            @Position.canceled -= instance.OnPosition;
+            @Rotation.started -= instance.OnRotation;
+            @Rotation.performed -= instance.OnRotation;
+            @Rotation.canceled -= instance.OnRotation;
+            @IsTracked.started -= instance.OnIsTracked;
+            @IsTracked.performed -= instance.OnIsTracked;
+            @IsTracked.canceled -= instance.OnIsTracked;
+            @TrackingState.started -= instance.OnTrackingState;
+            @TrackingState.performed -= instance.OnTrackingState;
+            @TrackingState.canceled -= instance.OnTrackingState;
+            @HapticDevice.started -= instance.OnHapticDevice;
+            @HapticDevice.performed -= instance.OnHapticDevice;
+            @HapticDevice.canceled -= instance.OnHapticDevice;
+            @AimPosition.started -= instance.OnAimPosition;
+            @AimPosition.performed -= instance.OnAimPosition;
+            @AimPosition.canceled -= instance.OnAimPosition;
+            @AimRotation.started -= instance.OnAimRotation;
+            @AimRotation.performed -= instance.OnAimRotation;
+            @AimRotation.canceled -= instance.OnAimRotation;
+            @AimFlags.started -= instance.OnAimFlags;
+            @AimFlags.performed -= instance.OnAimFlags;
+            @AimFlags.canceled -= instance.OnAimFlags;
+            @PinchPosition.started -= instance.OnPinchPosition;
+            @PinchPosition.performed -= instance.OnPinchPosition;
+            @PinchPosition.canceled -= instance.OnPinchPosition;
+            @PokePosition.started -= instance.OnPokePosition;
+            @PokePosition.performed -= instance.OnPokePosition;
+            @PokePosition.canceled -= instance.OnPokePosition;
+            @PokeRotation.started -= instance.OnPokeRotation;
+            @PokeRotation.performed -= instance.OnPokeRotation;
+            @PokeRotation.canceled -= instance.OnPokeRotation;
+            @GripPosition.started -= instance.OnGripPosition;
+            @GripPosition.performed -= instance.OnGripPosition;
+            @GripPosition.canceled -= instance.OnGripPosition;
+            @GripRotation.started -= instance.OnGripRotation;
+            @GripRotation.performed -= instance.OnGripRotation;
+            @GripRotation.canceled -= instance.OnGripRotation;
+            @Thumbstick.started -= instance.OnThumbstick;
+            @Thumbstick.performed -= instance.OnThumbstick;
+            @Thumbstick.canceled -= instance.OnThumbstick;
+        }
+
+        public void RemoveCallbacks(IXRIRightActions instance)
+        {
+            if (m_Wrapper.m_XRIRightActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IXRIRightActions instance)
+        {
+            foreach (var item in m_Wrapper.m_XRIRightActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_XRIRightActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public XRIRightActions @XRIRight => new XRIRightActions(this);
+
+    // XRI Left
+    private readonly InputActionMap m_XRILeft;
+    private List<IXRILeftActions> m_XRILeftActionsCallbackInterfaces = new List<IXRILeftActions>();
+    private readonly InputAction m_XRILeft_Position;
+    private readonly InputAction m_XRILeft_Rotation;
+    private readonly InputAction m_XRILeft_IsTracked;
+    private readonly InputAction m_XRILeft_TrackingState;
+    private readonly InputAction m_XRILeft_HapticDevice;
+    private readonly InputAction m_XRILeft_AimPosition;
+    private readonly InputAction m_XRILeft_AimRotation;
+    private readonly InputAction m_XRILeft_AimFlags;
+    private readonly InputAction m_XRILeft_PinchPosition;
+    private readonly InputAction m_XRILeft_PokePosition;
+    private readonly InputAction m_XRILeft_PokeRotation;
+    private readonly InputAction m_XRILeft_GripPosition;
+    private readonly InputAction m_XRILeft_GripRotation;
+    private readonly InputAction m_XRILeft_Thumbstick;
+    public struct XRILeftActions
+    {
+        private @PlayerInputContols m_Wrapper;
+        public XRILeftActions(@PlayerInputContols wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Position => m_Wrapper.m_XRILeft_Position;
+        public InputAction @Rotation => m_Wrapper.m_XRILeft_Rotation;
+        public InputAction @IsTracked => m_Wrapper.m_XRILeft_IsTracked;
+        public InputAction @TrackingState => m_Wrapper.m_XRILeft_TrackingState;
+        public InputAction @HapticDevice => m_Wrapper.m_XRILeft_HapticDevice;
+        public InputAction @AimPosition => m_Wrapper.m_XRILeft_AimPosition;
+        public InputAction @AimRotation => m_Wrapper.m_XRILeft_AimRotation;
+        public InputAction @AimFlags => m_Wrapper.m_XRILeft_AimFlags;
+        public InputAction @PinchPosition => m_Wrapper.m_XRILeft_PinchPosition;
+        public InputAction @PokePosition => m_Wrapper.m_XRILeft_PokePosition;
+        public InputAction @PokeRotation => m_Wrapper.m_XRILeft_PokeRotation;
+        public InputAction @GripPosition => m_Wrapper.m_XRILeft_GripPosition;
+        public InputAction @GripRotation => m_Wrapper.m_XRILeft_GripRotation;
+        public InputAction @Thumbstick => m_Wrapper.m_XRILeft_Thumbstick;
+        public InputActionMap Get() { return m_Wrapper.m_XRILeft; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(XRILeftActions set) { return set.Get(); }
+        public void AddCallbacks(IXRILeftActions instance)
+        {
+            if (instance == null || m_Wrapper.m_XRILeftActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_XRILeftActionsCallbackInterfaces.Add(instance);
+            @Position.started += instance.OnPosition;
+            @Position.performed += instance.OnPosition;
+            @Position.canceled += instance.OnPosition;
+            @Rotation.started += instance.OnRotation;
+            @Rotation.performed += instance.OnRotation;
+            @Rotation.canceled += instance.OnRotation;
+            @IsTracked.started += instance.OnIsTracked;
+            @IsTracked.performed += instance.OnIsTracked;
+            @IsTracked.canceled += instance.OnIsTracked;
+            @TrackingState.started += instance.OnTrackingState;
+            @TrackingState.performed += instance.OnTrackingState;
+            @TrackingState.canceled += instance.OnTrackingState;
+            @HapticDevice.started += instance.OnHapticDevice;
+            @HapticDevice.performed += instance.OnHapticDevice;
+            @HapticDevice.canceled += instance.OnHapticDevice;
+            @AimPosition.started += instance.OnAimPosition;
+            @AimPosition.performed += instance.OnAimPosition;
+            @AimPosition.canceled += instance.OnAimPosition;
+            @AimRotation.started += instance.OnAimRotation;
+            @AimRotation.performed += instance.OnAimRotation;
+            @AimRotation.canceled += instance.OnAimRotation;
+            @AimFlags.started += instance.OnAimFlags;
+            @AimFlags.performed += instance.OnAimFlags;
+            @AimFlags.canceled += instance.OnAimFlags;
+            @PinchPosition.started += instance.OnPinchPosition;
+            @PinchPosition.performed += instance.OnPinchPosition;
+            @PinchPosition.canceled += instance.OnPinchPosition;
+            @PokePosition.started += instance.OnPokePosition;
+            @PokePosition.performed += instance.OnPokePosition;
+            @PokePosition.canceled += instance.OnPokePosition;
+            @PokeRotation.started += instance.OnPokeRotation;
+            @PokeRotation.performed += instance.OnPokeRotation;
+            @PokeRotation.canceled += instance.OnPokeRotation;
+            @GripPosition.started += instance.OnGripPosition;
+            @GripPosition.performed += instance.OnGripPosition;
+            @GripPosition.canceled += instance.OnGripPosition;
+            @GripRotation.started += instance.OnGripRotation;
+            @GripRotation.performed += instance.OnGripRotation;
+            @GripRotation.canceled += instance.OnGripRotation;
+            @Thumbstick.started += instance.OnThumbstick;
+            @Thumbstick.performed += instance.OnThumbstick;
+            @Thumbstick.canceled += instance.OnThumbstick;
+        }
+
+        private void UnregisterCallbacks(IXRILeftActions instance)
+        {
+            @Position.started -= instance.OnPosition;
+            @Position.performed -= instance.OnPosition;
+            @Position.canceled -= instance.OnPosition;
+            @Rotation.started -= instance.OnRotation;
+            @Rotation.performed -= instance.OnRotation;
+            @Rotation.canceled -= instance.OnRotation;
+            @IsTracked.started -= instance.OnIsTracked;
+            @IsTracked.performed -= instance.OnIsTracked;
+            @IsTracked.canceled -= instance.OnIsTracked;
+            @TrackingState.started -= instance.OnTrackingState;
+            @TrackingState.performed -= instance.OnTrackingState;
+            @TrackingState.canceled -= instance.OnTrackingState;
+            @HapticDevice.started -= instance.OnHapticDevice;
+            @HapticDevice.performed -= instance.OnHapticDevice;
+            @HapticDevice.canceled -= instance.OnHapticDevice;
+            @AimPosition.started -= instance.OnAimPosition;
+            @AimPosition.performed -= instance.OnAimPosition;
+            @AimPosition.canceled -= instance.OnAimPosition;
+            @AimRotation.started -= instance.OnAimRotation;
+            @AimRotation.performed -= instance.OnAimRotation;
+            @AimRotation.canceled -= instance.OnAimRotation;
+            @AimFlags.started -= instance.OnAimFlags;
+            @AimFlags.performed -= instance.OnAimFlags;
+            @AimFlags.canceled -= instance.OnAimFlags;
+            @PinchPosition.started -= instance.OnPinchPosition;
+            @PinchPosition.performed -= instance.OnPinchPosition;
+            @PinchPosition.canceled -= instance.OnPinchPosition;
+            @PokePosition.started -= instance.OnPokePosition;
+            @PokePosition.performed -= instance.OnPokePosition;
+            @PokePosition.canceled -= instance.OnPokePosition;
+            @PokeRotation.started -= instance.OnPokeRotation;
+            @PokeRotation.performed -= instance.OnPokeRotation;
+            @PokeRotation.canceled -= instance.OnPokeRotation;
+            @GripPosition.started -= instance.OnGripPosition;
+            @GripPosition.performed -= instance.OnGripPosition;
+            @GripPosition.canceled -= instance.OnGripPosition;
+            @GripRotation.started -= instance.OnGripRotation;
+            @GripRotation.performed -= instance.OnGripRotation;
+            @GripRotation.canceled -= instance.OnGripRotation;
+            @Thumbstick.started -= instance.OnThumbstick;
+            @Thumbstick.performed -= instance.OnThumbstick;
+            @Thumbstick.canceled -= instance.OnThumbstick;
+        }
+
+        public void RemoveCallbacks(IXRILeftActions instance)
+        {
+            if (m_Wrapper.m_XRILeftActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IXRILeftActions instance)
+        {
+            foreach (var item in m_Wrapper.m_XRILeftActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_XRILeftActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public XRILeftActions @XRILeft => new XRILeftActions(this);
 
     // Car
     private readonly InputActionMap m_Car;
@@ -586,6 +1714,94 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
         }
     }
     public CarActions @Car => new CarActions(this);
+
+    // XRController
+    private readonly InputActionMap m_XRController;
+    private List<IXRControllerActions> m_XRControllerActionsCallbackInterfaces = new List<IXRControllerActions>();
+    private readonly InputAction m_XRController_ThumbstickLeft;
+    private readonly InputAction m_XRController_ThumbstickRight;
+    public struct XRControllerActions
+    {
+        private @PlayerInputContols m_Wrapper;
+        public XRControllerActions(@PlayerInputContols wrapper) { m_Wrapper = wrapper; }
+        public InputAction @ThumbstickLeft => m_Wrapper.m_XRController_ThumbstickLeft;
+        public InputAction @ThumbstickRight => m_Wrapper.m_XRController_ThumbstickRight;
+        public InputActionMap Get() { return m_Wrapper.m_XRController; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(XRControllerActions set) { return set.Get(); }
+        public void AddCallbacks(IXRControllerActions instance)
+        {
+            if (instance == null || m_Wrapper.m_XRControllerActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_XRControllerActionsCallbackInterfaces.Add(instance);
+            @ThumbstickLeft.started += instance.OnThumbstickLeft;
+            @ThumbstickLeft.performed += instance.OnThumbstickLeft;
+            @ThumbstickLeft.canceled += instance.OnThumbstickLeft;
+            @ThumbstickRight.started += instance.OnThumbstickRight;
+            @ThumbstickRight.performed += instance.OnThumbstickRight;
+            @ThumbstickRight.canceled += instance.OnThumbstickRight;
+        }
+
+        private void UnregisterCallbacks(IXRControllerActions instance)
+        {
+            @ThumbstickLeft.started -= instance.OnThumbstickLeft;
+            @ThumbstickLeft.performed -= instance.OnThumbstickLeft;
+            @ThumbstickLeft.canceled -= instance.OnThumbstickLeft;
+            @ThumbstickRight.started -= instance.OnThumbstickRight;
+            @ThumbstickRight.performed -= instance.OnThumbstickRight;
+            @ThumbstickRight.canceled -= instance.OnThumbstickRight;
+        }
+
+        public void RemoveCallbacks(IXRControllerActions instance)
+        {
+            if (m_Wrapper.m_XRControllerActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IXRControllerActions instance)
+        {
+            foreach (var item in m_Wrapper.m_XRControllerActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_XRControllerActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public XRControllerActions @XRController => new XRControllerActions(this);
+    public interface IXRIRightActions
+    {
+        void OnPosition(InputAction.CallbackContext context);
+        void OnRotation(InputAction.CallbackContext context);
+        void OnIsTracked(InputAction.CallbackContext context);
+        void OnTrackingState(InputAction.CallbackContext context);
+        void OnHapticDevice(InputAction.CallbackContext context);
+        void OnAimPosition(InputAction.CallbackContext context);
+        void OnAimRotation(InputAction.CallbackContext context);
+        void OnAimFlags(InputAction.CallbackContext context);
+        void OnPinchPosition(InputAction.CallbackContext context);
+        void OnPokePosition(InputAction.CallbackContext context);
+        void OnPokeRotation(InputAction.CallbackContext context);
+        void OnGripPosition(InputAction.CallbackContext context);
+        void OnGripRotation(InputAction.CallbackContext context);
+        void OnThumbstick(InputAction.CallbackContext context);
+    }
+    public interface IXRILeftActions
+    {
+        void OnPosition(InputAction.CallbackContext context);
+        void OnRotation(InputAction.CallbackContext context);
+        void OnIsTracked(InputAction.CallbackContext context);
+        void OnTrackingState(InputAction.CallbackContext context);
+        void OnHapticDevice(InputAction.CallbackContext context);
+        void OnAimPosition(InputAction.CallbackContext context);
+        void OnAimRotation(InputAction.CallbackContext context);
+        void OnAimFlags(InputAction.CallbackContext context);
+        void OnPinchPosition(InputAction.CallbackContext context);
+        void OnPokePosition(InputAction.CallbackContext context);
+        void OnPokeRotation(InputAction.CallbackContext context);
+        void OnGripPosition(InputAction.CallbackContext context);
+        void OnGripRotation(InputAction.CallbackContext context);
+        void OnThumbstick(InputAction.CallbackContext context);
+    }
     public interface ICarActions
     {
         void OnThrottle(InputAction.CallbackContext context);
@@ -594,5 +1810,10 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
         void OnFire(InputAction.CallbackContext context);
         void OnReload(InputAction.CallbackContext context);
         void OnAim(InputAction.CallbackContext context);
+    }
+    public interface IXRControllerActions
+    {
+        void OnThumbstickLeft(InputAction.CallbackContext context);
+        void OnThumbstickRight(InputAction.CallbackContext context);
     }
 }

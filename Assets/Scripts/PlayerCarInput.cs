@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 
 public class PlayerCarInput : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class PlayerCarInput : MonoBehaviour
 
     public float steeringDampenSpeed = 5;
     public float throttleDampenSpeed = 10;
+
+    private Vector2 thumbstickInput;
 
     // Start is called before the first frame update
     void Awake()
@@ -28,6 +31,9 @@ public class PlayerCarInput : MonoBehaviour
         input.Car.Steering.canceled += ReleaseSteering;
         input.Car.Brake.performed += ApplyBrake;
         input.Car.Brake.canceled += ReleaseBrake;
+
+        input.XRController.ThumbstickRight.performed += OnThumbstickMove;
+        input.XRController.ThumbstickRight.canceled += OnThumbstickRelease;
     }
 
     private void OnDisable()
@@ -39,6 +45,9 @@ public class PlayerCarInput : MonoBehaviour
         input.Car.Steering.canceled -= ReleaseSteering;
         input.Car.Brake.performed -= ApplyBrake;
         input.Car.Brake.canceled -= ReleaseBrake;
+
+        input.XRController.ThumbstickRight.performed -= OnThumbstickMove;
+        input.XRController.ThumbstickRight.canceled -= OnThumbstickRelease;
     }
 
     private void Update()
@@ -47,9 +56,37 @@ public class PlayerCarInput : MonoBehaviour
         steeringDampened = DampendInput(steeringInput, steeringDampened, steeringDampenSpeed);
     }
 
+    private void OnThumbstickMove(InputAction.CallbackContext context)
+    {
+        thumbstickInput = context.ReadValue<Vector2>();
+        ApplySteering(thumbstickInput.x);            
+    }
+
+    private void ApplyThrottle(float value)
+    {
+        // Directly set the throttle input based on the thumbstick's Y value
+        throttleInput = value;
+    }
+
+
+
+    private void ApplySteering(float value)
+    {
+        // Directly set the steering input based on the thumbstick's X value
+        steeringInput = value;
+    }
+
+    private void OnThumbstickRelease(InputAction.CallbackContext context)
+    {
+        thumbstickInput = Vector2.zero;
+        ApplyThrottle(0);
+        ApplySteering(0);
+    }
+
     private float DampendInput(float input, float output, float dampenSpeed)
     {
-        return Mathf.Lerp(output, input, Time.deltaTime * dampenSpeed);
+        float dampenedInput = Mathf.Lerp(output, input, Time.deltaTime * dampenSpeed);
+        return dampenedInput;
     }
 
     private void ApplyThrottle(InputAction.CallbackContext value)

@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CarBuilder2_XR.unity
     guid: 8b820e26a259dbb4fa0ea2230522859a
+  - enabled: 0
+    path: Assets/Scenes/ThumbstickInput.unity
+    guid: 784639651d860c248b534882b0a82f02
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}

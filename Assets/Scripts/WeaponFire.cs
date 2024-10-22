@@ -25,6 +25,8 @@ public class WeaponFire : MonoBehaviour
     public float rotationValue;
     public float rotationSpeed;
 
+    public Vector2 thumbstickInput;
+
 
     void Awake()
     {
@@ -41,6 +43,9 @@ public class WeaponFire : MonoBehaviour
         CreatedCarManager.OnPrimaryWeaponSelected += OnPrimaryWeaponSelected;
         input.Car.Aim.performed += RotateTurret;
         input.Car.Aim.canceled += StopRotation;
+
+        input.XRController.ThumbstickLeft.performed += OnThumbstickMove;
+        input.XRController.ThumbstickLeft.canceled += OnThumbstickRelease;
     }
 
     private void OnDisable()
@@ -49,6 +54,26 @@ public class WeaponFire : MonoBehaviour
         CreatedCarManager.OnPrimaryWeaponSelected -= OnPrimaryWeaponSelected;
         input.Car.Aim.performed += RotateTurret;
         input.Car.Aim.canceled += StopRotation;
+
+        input.XRController.ThumbstickLeft.performed -= OnThumbstickMove;
+        input.XRController.ThumbstickLeft.canceled -= OnThumbstickRelease;
+    }
+
+    private void OnThumbstickRelease(InputAction.CallbackContext context)
+    {
+        thumbstickInput = Vector2.zero;
+        RotateTurret(thumbstickInput.x);
+    }
+
+    private void OnThumbstickMove(InputAction.CallbackContext context)
+    {
+        thumbstickInput = context.ReadValue<Vector2>();
+        RotateTurret(thumbstickInput.x);
+    }
+
+    private void RotateTurret(float value)
+    {
+        rotationValue = value;
     }
 
     private void RotateTurret(InputAction.CallbackContext value)
