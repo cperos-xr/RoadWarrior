@@ -9,12 +9,12 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Handgun
   - Water
   - UI
-  - 
-  - Vehicle
   - SecondaryWeapon
+  - Vehicle
+  - 
   - 
   - 
   - 

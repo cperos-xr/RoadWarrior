@@ -43721,7 +43721,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5308747242862996238}
-  - component: {fileID: 4069162838486029413}
+  - component: {fileID: 421663511853285006}
   m_Layer: 0
   m_Name: Secondary Weapon Spawn Position
   m_TagString: Untagged
@@ -43744,7 +43744,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1431717659459631089}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
---- !u!114 &4069162838486029413
+--- !u!114 &421663511853285006
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
