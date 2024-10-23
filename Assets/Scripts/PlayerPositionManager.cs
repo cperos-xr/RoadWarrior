@@ -87,6 +87,7 @@ public class PlayerPositionManager : MonoBehaviour
     {
         xrOrigin.MoveCameraToWorldLocation(recenterTransform.position);
         xrOrigin.MatchOriginUpCameraForward(recenterTransform.up, recenterTransform.forward);
+        xrOrigin.transform.SetParent(recenterTransform);
     }
 
     public void PlacePlayerOnGun()

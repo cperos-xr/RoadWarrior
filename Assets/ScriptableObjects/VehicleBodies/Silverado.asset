@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partName: Silverado
   icon: {fileID: 2800000, guid: a588158238577f34ab446d9b3e18ea76, type: 3}
-  model: {fileID: 2079826825891509830, guid: 861646c180efd47428fe2a0f2114db81, type: 3}
+  model: {fileID: 2079826825891509830, guid: 19af7b994240f2146af1db3f3e7ccf61, type: 3}
   weight: 1500
   cost: 1000
   topSpeed: 120

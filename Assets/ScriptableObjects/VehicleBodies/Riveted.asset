@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partName: Riveted
   icon: {fileID: 2800000, guid: db5dcedf1500a4c46b4611095e300624, type: 3}
-  model: {fileID: 4453787083454653252, guid: b1df7d9de695b4340a0fda679ed59a6a, type: 3}
+  model: {fileID: 4453787083454653252, guid: bc12b81eed801904cb14e3cf5fb9b600, type: 3}
   weight: 1300
   cost: 1000
   topSpeed: 120
@@ -25,8 +25,8 @@ MonoBehaviour:
   mass: 1200
   drag: 0.1
   angularDrag: 0.05
-  frontWheelScale: {x: 1, y: 1, z: 1}
-  rearWheelScale: {x: 1, y: 1, z: 1}
+  frontWheelScale: {x: 1, y: 0.82, z: 0.82}
+  rearWheelScale: {x: 1, y: 0.82, z: 0.82}
   center: {x: 0, y: 0.4474629, z: -0.2860396}
   size: {x: 1.94, y: 0.8650742, z: 4.292083}
   vehicleType: 2
