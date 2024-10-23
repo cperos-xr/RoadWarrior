@@ -11,10 +11,7 @@ public class CreateDrivableCar : MonoBehaviour
     [SerializeField] private ObjectRotator objectRotator;
 
     [SerializeField] private Transform PlayerLocation;
-    [SerializeField] private GameObject XROrigin;
-
     [SerializeField] private CharacterController characterController;
-    [SerializeField] private CameraController cameraController;
     public List <GameObject> deactivateOnCreate;
     public List<GameObject> activateOnCreate;
 
