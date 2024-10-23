@@ -8634,19 +8634,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5007766103700882973, guid: fe7fcf44eedd467489de26ce92577bc3, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetTransformPositionTrue
+      value: AttachToVehicle
       objectReference: {fileID: 0}
     - target: {fileID: 5007766103700882973, guid: fe7fcf44eedd467489de26ce92577bc3, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetTransformPositionFalse
+      value: DetachFromVehicle
       objectReference: {fileID: 0}
     - target: {fileID: 5007766103700882973, guid: fe7fcf44eedd467489de26ce92577bc3, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ReceiveAndSetTransformPosition, Assembly-CSharp
+      value: MatchParentPositionAndIgnoreVehicle, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5007766103700882973, guid: fe7fcf44eedd467489de26ce92577bc3, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ReceiveAndSetTransformPosition, Assembly-CSharp
+      value: MatchParentPositionAndIgnoreVehicle, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5007766103700882973, guid: fe7fcf44eedd467489de26ce92577bc3, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
