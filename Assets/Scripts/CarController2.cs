@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CarController2 : MonoBehaviour
@@ -16,8 +13,13 @@ public class CarController2 : MonoBehaviour
 
     public float motorForce;
     public float brakeForce;
-    public float slipAngle;
-    private float speed;
+    //public float slipAngle;
+    public float speed;
+
+    //public int isEngineRunning; //new
+    public float maxSteering = 70f; //new
+    public int featherBrakes; //new
+    public int featerMod; //new
 
     public AnimationCurve steeringCurve;
 
@@ -55,11 +57,45 @@ public class CarController2 : MonoBehaviour
             brakeInput = input.brakeInput;
         }
         speed = playerRigidBody.velocity.magnitude;
-        CheckInput();
+        if (input != null)
+        {
+            CheckInput();
+        }
         ApplyMotorForce();
         ApplySteering();
         ApplyBrakeForce();
         ApplyWheelPositions();
+    }
+
+    public void SetInput(float throttleIn, float steeringIn, float recommendedTopSpeed, bool isBraking)
+    {
+        gasInput = throttleIn;
+
+        HandleSteeringInput(steeringIn);
+        float movingDirection = Vector3.Dot(transform.forward, playerRigidBody.velocity);
+        if (movingDirection < -0.5f && gasInput > 0)
+        {
+            Debug.Log("case 1");
+            brakeInput = Mathf.Abs(gasInput);
+        }
+        else if (movingDirection > 0.5f && gasInput < 0)
+        {
+            Debug.Log("case 2");
+            brakeInput = Mathf.Abs(gasInput);
+        }
+        else if (isBraking)
+        {
+            Debug.Log("case 3");
+            ApplyBrakesIfNeeded(recommendedTopSpeed);
+        }
+        else
+        {
+            Debug.Log("case 4");
+            brakeInput = 0f;
+            featherBrakes = 0;
+        }
+       
+
     }
 
     void ApplySteering()
@@ -119,7 +155,7 @@ public class CarController2 : MonoBehaviour
 
     private void CheckInput()
     {
-        slipAngle = Vector3.Angle(transform.forward, playerRigidBody.velocity - transform.forward);
+        //slipAngle = Vector3.Angle(transform.forward, playerRigidBody.velocity - transform.forward);
         //fixed code to brake even after going on reverse by Andrew Alex 
         float movingDirection = Vector3.Dot(transform.forward, playerRigidBody.velocity);
         if (movingDirection < -0.5f && gasInput > 0)
@@ -134,5 +170,24 @@ public class CarController2 : MonoBehaviour
         {
             brakeInput = 0;
         }
+    }
+
+    private void ApplyBrakesIfNeeded(float recommendedTopSpeed)
+    {
+        Debug.Log("Max Speed " + recommendedTopSpeed);
+
+        if (recommendedTopSpeed > speed)
+        {
+            featherBrakes++;
+            if (featherBrakes % featerMod == 0)
+            {
+                brakeInput = 1;
+            }
+            else
+            {
+                brakeInput = 0;
+            }
+        }
+         // Apply the brake force immediately
     }
 }
