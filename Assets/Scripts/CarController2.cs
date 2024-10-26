@@ -13,33 +13,32 @@ public class CarController2 : MonoBehaviour
 
     public float motorForce;
     public float brakeForce;
-    //public float slipAngle;
     public float speed;
 
-    //public int isEngineRunning; //new
-    public float maxSteering = 70f; //new
-    public int featherBrakes; //new
-    public int featerMod; //new
+    public float maxSteering = 70f;
 
     public AnimationCurve steeringCurve;
 
     [SerializeField] private PlayerCarInput input;
 
-    // Start is called before the first frame update
+    // Flag to indicate whether this is an AI-controlled car
+    private bool isAIControlled;
+
     private void OnEnable()
     {
-        if (input == null)
+        isAIControlled = input == null;
+
+        if (!isAIControlled)
         {
             InputManager.OnSteer += HandleSteeringInput;
             InputManager.OnMove += HandleMovementInput;
             InputManager.OnBrake += HandleBrakingInput;
         }
-
     }
 
     private void OnDisable()
     {
-        if (input == null)
+        if (!isAIControlled)
         {
             InputManager.OnSteer -= HandleSteeringInput;
             InputManager.OnMove -= HandleMovementInput;
@@ -47,55 +46,37 @@ public class CarController2 : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (input != null)
+        speed = playerRigidBody.velocity.magnitude;
+
+        if (isAIControlled)
         {
+            // AI-controlled car: Inputs are set via SetInput()
+            // brakeInput is set directly by the AI
+        }
+        else
+        {
+            // Player-controlled car: Get inputs from PlayerCarInput
             gasInput = input.throttleDampened;
             steerInput = input.steeringDampened;
             brakeInput = input.brakeInput;
-        }
-        speed = playerRigidBody.velocity.magnitude;
-        if (input != null)
-        {
+
+            // Apply internal brake logic for the player
             CheckInput();
         }
+
         ApplyMotorForce();
         ApplySteering();
         ApplyBrakeForce();
         ApplyWheelPositions();
     }
 
-    public void SetInput(float throttleIn, float steeringIn, float recommendedTopSpeed, bool isBraking)
+    public void SetInput(float throttleIn, float steeringIn, float brakeIn)
     {
         gasInput = throttleIn;
-
-        HandleSteeringInput(steeringIn);
-        float movingDirection = Vector3.Dot(transform.forward, playerRigidBody.velocity);
-        if (movingDirection < -0.5f && gasInput > 0)
-        {
-            Debug.Log("case 1");
-            brakeInput = Mathf.Abs(gasInput);
-        }
-        else if (movingDirection > 0.5f && gasInput < 0)
-        {
-            Debug.Log("case 2");
-            brakeInput = Mathf.Abs(gasInput);
-        }
-        else if (isBraking)
-        {
-            Debug.Log("case 3");
-            ApplyBrakesIfNeeded(recommendedTopSpeed);
-        }
-        else
-        {
-            Debug.Log("case 4");
-            brakeInput = 0f;
-            featherBrakes = 0;
-        }
-       
-
+        steerInput = steeringIn;
+        brakeInput = brakeIn;
     }
 
     void ApplySteering()
@@ -137,7 +118,6 @@ public class CarController2 : MonoBehaviour
         wheelTransform.rotation = quaternion;
     }
 
-
     private void HandleMovementInput(float value)
     {
         gasInput = value;
@@ -148,15 +128,14 @@ public class CarController2 : MonoBehaviour
         steerInput = value;
     }
 
-    private void HandleBrakingInput(float isBraking)
+    private void HandleBrakingInput(float value)
     {
-        brakeInput = Mathf.Abs(isBraking);
+        brakeInput = Mathf.Abs(value);
     }
 
     private void CheckInput()
     {
-        //slipAngle = Vector3.Angle(transform.forward, playerRigidBody.velocity - transform.forward);
-        //fixed code to brake even after going on reverse by Andrew Alex 
+        // Internal brake logic for player control
         float movingDirection = Vector3.Dot(transform.forward, playerRigidBody.velocity);
         if (movingDirection < -0.5f && gasInput > 0)
         {
@@ -168,26 +147,8 @@ public class CarController2 : MonoBehaviour
         }
         else
         {
-            brakeInput = 0;
+            // Use player's brake input
+            brakeInput = input.brakeInput;
         }
-    }
-
-    private void ApplyBrakesIfNeeded(float recommendedTopSpeed)
-    {
-        Debug.Log("Max Speed " + recommendedTopSpeed);
-
-        if (recommendedTopSpeed > speed)
-        {
-            featherBrakes++;
-            if (featherBrakes % featerMod == 0)
-            {
-                brakeInput = 1;
-            }
-            else
-            {
-                brakeInput = 0;
-            }
-        }
-         // Apply the brake force immediately
     }
 }
