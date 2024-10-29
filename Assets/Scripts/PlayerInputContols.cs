@@ -842,6 +842,15 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ToggleAI"",
+                    ""type"": ""Button"",
+                    ""id"": ""62690fc1-369d-4789-8871-460e569a09fc"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -925,7 +934,7 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Positive"",
                     ""id"": ""ae706d5f-3696-430d-a15e-34e9ed6dca27"",
-                    ""path"": ""<XRController>{LeftHand}/{SecondaryButton}"",
+                    ""path"": ""<XRController>{LeftHand}/{Trigger}"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -1023,6 +1032,17 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""451e2b48-d1e4-4740-b77f-424366661c2e"",
+                    ""path"": ""<XRController>{LeftHand}/{SecondaryButton}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Brake"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""5b952347-0a5b-44c5-9d8d-40b6cd14f342"",
                     ""path"": ""<Keyboard>/f"",
                     ""interactions"": """",
@@ -1046,7 +1066,7 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""b4fe43e7-f573-45ff-bc6a-0102ed6b9ad0"",
-                    ""path"": ""<XRController>{LeftHand}/{TriggerButton}"",
+                    ""path"": ""<XRController>{RightHand}/{TriggerButton}"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -1196,6 +1216,28 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
                     ""action"": ""CyclePlayerPosition"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ca8bb09b-43f7-40ee-9497-17ca3ec6f4e3"",
+                    ""path"": ""<Keyboard>/end"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleAI"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2ed805eb-8885-491d-aaa5-a60c6abadd43"",
+                    ""path"": ""<XRController>{RightHand}/{Primary2DAxisClick}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleAI"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -1291,6 +1333,7 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
         m_Car_Reload = m_Car.FindAction("Reload", throwIfNotFound: true);
         m_Car_Aim = m_Car.FindAction("Aim", throwIfNotFound: true);
         m_Car_CyclePlayerPosition = m_Car.FindAction("CyclePlayerPosition", throwIfNotFound: true);
+        m_Car_ToggleAI = m_Car.FindAction("ToggleAI", throwIfNotFound: true);
         // XRController
         m_XRController = asset.FindActionMap("XRController", throwIfNotFound: true);
         m_XRController_ThumbstickLeft = m_XRController.FindAction("ThumbstickLeft", throwIfNotFound: true);
@@ -1671,6 +1714,7 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
     private readonly InputAction m_Car_Reload;
     private readonly InputAction m_Car_Aim;
     private readonly InputAction m_Car_CyclePlayerPosition;
+    private readonly InputAction m_Car_ToggleAI;
     public struct CarActions
     {
         private @PlayerInputContols m_Wrapper;
@@ -1682,6 +1726,7 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
         public InputAction @Reload => m_Wrapper.m_Car_Reload;
         public InputAction @Aim => m_Wrapper.m_Car_Aim;
         public InputAction @CyclePlayerPosition => m_Wrapper.m_Car_CyclePlayerPosition;
+        public InputAction @ToggleAI => m_Wrapper.m_Car_ToggleAI;
         public InputActionMap Get() { return m_Wrapper.m_Car; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1712,6 +1757,9 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
             @CyclePlayerPosition.started += instance.OnCyclePlayerPosition;
             @CyclePlayerPosition.performed += instance.OnCyclePlayerPosition;
             @CyclePlayerPosition.canceled += instance.OnCyclePlayerPosition;
+            @ToggleAI.started += instance.OnToggleAI;
+            @ToggleAI.performed += instance.OnToggleAI;
+            @ToggleAI.canceled += instance.OnToggleAI;
         }
 
         private void UnregisterCallbacks(ICarActions instance)
@@ -1737,6 +1785,9 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
             @CyclePlayerPosition.started -= instance.OnCyclePlayerPosition;
             @CyclePlayerPosition.performed -= instance.OnCyclePlayerPosition;
             @CyclePlayerPosition.canceled -= instance.OnCyclePlayerPosition;
+            @ToggleAI.started -= instance.OnToggleAI;
+            @ToggleAI.performed -= instance.OnToggleAI;
+            @ToggleAI.canceled -= instance.OnToggleAI;
         }
 
         public void RemoveCallbacks(ICarActions instance)
@@ -1851,6 +1902,7 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
         void OnReload(InputAction.CallbackContext context);
         void OnAim(InputAction.CallbackContext context);
         void OnCyclePlayerPosition(InputAction.CallbackContext context);
+        void OnToggleAI(InputAction.CallbackContext context);
     }
     public interface IXRControllerActions
     {

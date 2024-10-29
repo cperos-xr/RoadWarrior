@@ -3,7 +3,7 @@ using UnityEngine;
 public class SetMountPoint : MonoBehaviour
 {
     public MountConfig mountConfig; // This should match the mountConfig of the correct mount point
-
+    public bool setParentToNewGameObject = false;
 
     private void OnEnable()
     {
@@ -30,7 +30,10 @@ public class SetMountPoint : MonoBehaviour
             transform.localRotation = mountConfig.rotationOffset;
 
             // Return to the original parent
-            transform.SetParent(originalParent);
+            if (!setParentToNewGameObject)
+            {
+                transform.SetParent(originalParent);
+            }
 
         }
         else

@@ -386,7 +386,8 @@ MonoBehaviour:
   brakeInput: 0
   motorForce: 1000
   brakeForce: 50000
-  slipAngle: 0
+  speed: 0
+  maxSteering: 70
   steeringCurve:
     serializedVersion: 2
     m_Curve:
@@ -412,6 +413,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   input: {fileID: 1367928658}
+  isAIControlled: 0
 --- !u!54 &210113329
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -539,6 +541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mountConfig: {fileID: 11400000, guid: d819fb66d42b7af4ca021cf97a46b66f, type: 2}
+  setParentToNewGameObject: 0
 --- !u!1 &253701604
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,6 +708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mountConfig: {fileID: 11400000, guid: f4c9eacfff7d537408e48377c1c1952b, type: 2}
+  setParentToNewGameObject: 0
 --- !u!198 &266276917 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 198000010131513902, guid: 7ca96822084510147adb2aea03d45e3b, type: 3}
@@ -1393,6 +1397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mountConfig: {fileID: 11400000, guid: 55e91ae111209264f94fa3f1797920b2, type: 2}
+  setParentToNewGameObject: 0
 --- !u!1 &553698337
 GameObject:
   m_ObjectHideFlags: 0
@@ -6979,6 +6984,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1767192439, guid: f5aa4e845ea51b848b2f9e60b983d7ed, type: 3}
+      propertyPath: m_BackGroundColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1767192439, guid: f5aa4e845ea51b848b2f9e60b983d7ed, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1767192439, guid: f5aa4e845ea51b848b2f9e60b983d7ed, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1767192439, guid: f5aa4e845ea51b848b2f9e60b983d7ed, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503725, guid: f5aa4e845ea51b848b2f9e60b983d7ed, type: 3}
       propertyPath: m_Name
       value: XR Origin (XR Rig)
@@ -8430,6 +8451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mountConfig: {fileID: 11400000, guid: 6d1c22be45e5c6e48a8c0363f599da6e, type: 2}
+  setParentToNewGameObject: 0
 --- !u!1001 &1350312149
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8543,6 +8565,7 @@ MonoBehaviour:
   brakeInput: 0
   steeringDampenSpeed: 5
   throttleDampenSpeed: 10
+  isAIControlled: 0
 --- !u!1 &1385246689
 GameObject:
   m_ObjectHideFlags: 0
@@ -8661,6 +8684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mountConfig: {fileID: 11400000, guid: 7a82d8df5d054d8429e31c7b8a848b46, type: 2}
+  setParentToNewGameObject: 0
 --- !u!1001 &1512921579
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9154,6 +9178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mountConfig: {fileID: 11400000, guid: 0bcf5496b7c7cc14f80e04f987d62db6, type: 2}
+  setParentToNewGameObject: 0
 --- !u!1 &1593063252 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2440152259188708978, guid: 6a12cd0e1c784fb4c94a3dea44316a49, type: 3}
@@ -9464,6 +9489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mountConfig: {fileID: 11400000, guid: 007e330ebdb8e6f4c8bf96195c66ec92, type: 2}
+  setParentToNewGameObject: 0
 --- !u!1001 &1769570188
 PrefabInstance:
   m_ObjectHideFlags: 0

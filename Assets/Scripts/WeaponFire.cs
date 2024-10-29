@@ -44,8 +44,8 @@ public class WeaponFire : MonoBehaviour
         input.Car.Aim.performed += RotateTurret;
         input.Car.Aim.canceled += StopRotation;
 
-        input.XRController.ThumbstickLeft.performed += OnThumbstickMove;
-        input.XRController.ThumbstickLeft.canceled += OnThumbstickRelease;
+        input.XRController.ThumbstickRight.performed += OnThumbstickMove;
+        input.XRController.ThumbstickRight.canceled += OnThumbstickRelease;
     }
 
     private void OnDisable()
@@ -55,8 +55,8 @@ public class WeaponFire : MonoBehaviour
         input.Car.Aim.performed += RotateTurret;
         input.Car.Aim.canceled += StopRotation;
 
-        input.XRController.ThumbstickLeft.performed -= OnThumbstickMove;
-        input.XRController.ThumbstickLeft.canceled -= OnThumbstickRelease;
+        input.XRController.ThumbstickRight.performed -= OnThumbstickMove;
+        input.XRController.ThumbstickRight.canceled -= OnThumbstickRelease;
     }
 
     private void OnThumbstickRelease(InputAction.CallbackContext context)
@@ -140,7 +140,9 @@ public class WeaponFire : MonoBehaviour
 
             if (raycastHit.transform.CompareTag("Enemy"))
             {
-                // Do damage to enemy
+
+                Enemy enemy = raycastHit.transform.GetComponent<Enemy>();
+                enemy.TakeDamage(weapon.damage);
             }
             else
             {

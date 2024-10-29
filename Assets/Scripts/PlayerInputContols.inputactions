@@ -819,6 +819,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ToggleAI",
+                    "type": "Button",
+                    "id": "62690fc1-369d-4789-8871-460e569a09fc",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -902,7 +911,7 @@
                 {
                     "name": "Positive",
                     "id": "ae706d5f-3696-430d-a15e-34e9ed6dca27",
-                    "path": "<XRController>{LeftHand}/{SecondaryButton}",
+                    "path": "<XRController>{LeftHand}/{Trigger}",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1000,6 +1009,17 @@
                 },
                 {
                     "name": "",
+                    "id": "451e2b48-d1e4-4740-b77f-424366661c2e",
+                    "path": "<XRController>{LeftHand}/{SecondaryButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Brake",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "5b952347-0a5b-44c5-9d8d-40b6cd14f342",
                     "path": "<Keyboard>/f",
                     "interactions": "",
@@ -1023,7 +1043,7 @@
                 {
                     "name": "",
                     "id": "b4fe43e7-f573-45ff-bc6a-0102ed6b9ad0",
-                    "path": "<XRController>{LeftHand}/{TriggerButton}",
+                    "path": "<XRController>{RightHand}/{TriggerButton}",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1171,6 +1191,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "CyclePlayerPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ca8bb09b-43f7-40ee-9497-17ca3ec6f4e3",
+                    "path": "<Keyboard>/end",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleAI",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2ed805eb-8885-491d-aaa5-a60c6abadd43",
+                    "path": "<XRController>{RightHand}/{Primary2DAxisClick}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleAI",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

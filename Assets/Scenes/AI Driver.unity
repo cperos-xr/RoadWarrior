@@ -519,6 +519,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   input: {fileID: 1367928658}
+  isAIControlled: 0
 --- !u!54 &210113329
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -617,12 +618,12 @@ MonoBehaviour:
   waypoints: []
   currentWaypoint: 0
   carController: {fileID: 210113328}
-  waypointRange: 0
+  waypointRange: 25
   maximumSpeed: 120
   recommendedMaxSpeed: 0
-  maxBrakeInput: 0.5
+  maxBrakeInput: 0.6
   minGasInput: 0.2
-  Kp: 0.01
+  Kp: 0.08
   isInsideBraking: 0
   maxSteeringAngle: 30
 --- !u!1 &249877604
@@ -1498,6 +1499,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf7244c26bcf7f4eaed192e8d71ce24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &315649058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315649052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65fbd90c50c65054199eebfb44dca098, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!1 &328067021
 GameObject:
   m_ObjectHideFlags: 0
@@ -10249,6 +10263,7 @@ MonoBehaviour:
   brakeInput: 0
   steeringDampenSpeed: 5
   throttleDampenSpeed: 10
+  isAIControlled: 0
 --- !u!1 &1385246689
 GameObject:
   m_ObjectHideFlags: 0
@@ -10742,13 +10757,37 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4245732230455333239, guid: c3bf6feec5a6fd141a188bc457d6dee5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4885096748744806946, guid: c3bf6feec5a6fd141a188bc457d6dee5, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969195098307267702, guid: c3bf6feec5a6fd141a188bc457d6dee5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6510875867242935553, guid: c3bf6feec5a6fd141a188bc457d6dee5, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6548968612715047553, guid: c3bf6feec5a6fd141a188bc457d6dee5, type: 3}
       propertyPath: m_Name
       value: CreatedCar (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6548968612715047553, guid: c3bf6feec5a6fd141a188bc457d6dee5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6548968612715047553, guid: c3bf6feec5a6fd141a188bc457d6dee5, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395306584205073820, guid: c3bf6feec5a6fd141a188bc457d6dee5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8260190294395176843, guid: c3bf6feec5a6fd141a188bc457d6dee5, type: 3}
       propertyPath: m_Enabled
@@ -10778,6 +10817,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6548968612715047553, guid: c3bf6feec5a6fd141a188bc457d6dee5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 315649053}
+    - targetCorrespondingSourceObject: {fileID: 6548968612715047553, guid: c3bf6feec5a6fd141a188bc457d6dee5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 315649058}
   m_SourcePrefab: {fileID: 100100000, guid: c3bf6feec5a6fd141a188bc457d6dee5, type: 3}
 --- !u!1 &1499119414
 GameObject:
@@ -12385,8 +12427,7 @@ MonoBehaviour:
   - {fileID: 1593063252}
   - {fileID: 1544431144}
   - {fileID: 1249617917}
-  activateOnCreate:
-  - {fileID: 0}
+  activateOnCreate: []
   isXR: 1
 --- !u!65 &1890512695 stripped
 BoxCollider:

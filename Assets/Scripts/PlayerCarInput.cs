@@ -1,6 +1,8 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class PlayerCarInput : MonoBehaviour
 {
@@ -13,6 +15,8 @@ public class PlayerCarInput : MonoBehaviour
 
     public float steeringDampenSpeed = 5;
     public float throttleDampenSpeed = 10;
+
+    public bool isAIControlled = false;
 
     private Vector2 thumbstickInput;
 
@@ -32,8 +36,10 @@ public class PlayerCarInput : MonoBehaviour
         input.Car.Brake.performed += ApplyBrake;
         input.Car.Brake.canceled += ReleaseBrake;
 
-        input.XRController.ThumbstickRight.performed += OnThumbstickMove;
-        input.XRController.ThumbstickRight.canceled += OnThumbstickRelease;
+        input.Car.ToggleAI.performed += toggleAI;
+
+        input.XRController.ThumbstickLeft.performed += OnThumbstickMove;
+        input.XRController.ThumbstickLeft.canceled += OnThumbstickRelease;
     }
 
     private void OnDisable()
@@ -46,8 +52,19 @@ public class PlayerCarInput : MonoBehaviour
         input.Car.Brake.performed -= ApplyBrake;
         input.Car.Brake.canceled -= ReleaseBrake;
 
-        input.XRController.ThumbstickRight.performed -= OnThumbstickMove;
-        input.XRController.ThumbstickRight.canceled -= OnThumbstickRelease;
+        input.Car.ToggleAI.performed -= toggleAI;
+
+        input.XRController.ThumbstickLeft.performed -= OnThumbstickMove;
+        input.XRController.ThumbstickLeft.canceled -= OnThumbstickRelease;
+    }
+
+    private void toggleAI(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            isAIControlled = !isAIControlled;
+        }
+
     }
 
     private void Update()

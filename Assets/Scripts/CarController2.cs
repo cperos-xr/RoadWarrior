@@ -22,7 +22,7 @@ public class CarController2 : MonoBehaviour
     [SerializeField] private PlayerCarInput input;
 
     // Flag to indicate whether this is an AI-controlled car
-    private bool isAIControlled;
+    public bool isAIControlled;
 
     private void OnEnable()
     {
@@ -50,20 +50,25 @@ public class CarController2 : MonoBehaviour
     {
         speed = playerRigidBody.velocity.magnitude;
 
-        if (isAIControlled)
+        if (input != null)
         {
-            // AI-controlled car: Inputs are set via SetInput()
-            // brakeInput is set directly by the AI
+            isAIControlled = input.isAIControlled;
         }
-        else
+
+        if (!isAIControlled)
         {
-            // Player-controlled car: Get inputs from PlayerCarInput
+            // Player-controlled car: get inputs from PlayerCarInput
             gasInput = input.throttleDampened;
             steerInput = input.steeringDampened;
             brakeInput = input.brakeInput;
 
             // Apply internal brake logic for the player
             CheckInput();
+        }
+        else
+        {
+            // AI-controlled car: inputs are set via SetInput()
+            // brakeInput is set directly by the AI
         }
 
         ApplyMotorForce();
@@ -120,17 +125,28 @@ public class CarController2 : MonoBehaviour
 
     private void HandleMovementInput(float value)
     {
-        gasInput = value;
+        if (!isAIControlled)
+        {
+            gasInput = value;
+
+        }
     }
 
     private void HandleSteeringInput(float value)
     {
-        steerInput = value;
+        if (!isAIControlled)
+        {
+            steerInput = value;
+        }
+
     }
 
     private void HandleBrakingInput(float value)
     {
-        brakeInput = Mathf.Abs(value);
+        if (!isAIControlled)
+        {
+            brakeInput = Mathf.Abs(value);
+        }
     }
 
     private void CheckInput()
