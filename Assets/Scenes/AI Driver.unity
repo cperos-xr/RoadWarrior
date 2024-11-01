@@ -671,6 +671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mountConfig: {fileID: 11400000, guid: d819fb66d42b7af4ca021cf97a46b66f, type: 2}
+  setParentToNewGameObject: 0
 --- !u!1 &253701604
 GameObject:
   m_ObjectHideFlags: 0
@@ -837,6 +838,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mountConfig: {fileID: 11400000, guid: f4c9eacfff7d537408e48377c1c1952b, type: 2}
+  setParentToNewGameObject: 1
 --- !u!198 &266276917 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 198000010131513902, guid: 7ca96822084510147adb2aea03d45e3b, type: 3}
@@ -2335,6 +2337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mountConfig: {fileID: 11400000, guid: 55e91ae111209264f94fa3f1797920b2, type: 2}
+  setParentToNewGameObject: 0
 --- !u!1 &553698337
 GameObject:
   m_ObjectHideFlags: 0
@@ -9511,7 +9514,8 @@ MonoBehaviour:
   reloading: 0
   muzzleFlash: {fileID: 1592454408}
   bulletshell: {fileID: 266276917}
-  rotationValue: 0
+  horizontalRotationValue: 0
+  verticalRotationValue: 0
   rotationSpeed: 60
   thumbstickInput: {x: 0, y: 0}
 --- !u!1 &1149535993
@@ -10150,6 +10154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mountConfig: {fileID: 11400000, guid: 6d1c22be45e5c6e48a8c0363f599da6e, type: 2}
+  setParentToNewGameObject: 0
 --- !u!1001 &1350312149
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10971,6 +10976,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mountConfig: {fileID: 11400000, guid: 7a82d8df5d054d8429e31c7b8a848b46, type: 2}
+  setParentToNewGameObject: 0
 --- !u!1001 &1512921579
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11464,6 +11470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mountConfig: {fileID: 11400000, guid: 0bcf5496b7c7cc14f80e04f987d62db6, type: 2}
+  setParentToNewGameObject: 1
 --- !u!1 &1593063252 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2440152259188708978, guid: 6a12cd0e1c784fb4c94a3dea44316a49, type: 3}
@@ -11774,6 +11781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mountConfig: {fileID: 11400000, guid: 007e330ebdb8e6f4c8bf96195c66ec92, type: 2}
+  setParentToNewGameObject: 0
 --- !u!1001 &1769570188
 PrefabInstance:
   m_ObjectHideFlags: 0

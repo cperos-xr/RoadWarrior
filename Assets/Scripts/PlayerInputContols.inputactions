@@ -812,6 +812,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "VerticalAim",
+                    "type": "Button",
+                    "id": "61e7a8d9-3629-474f-8261-27a5682060b1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "CyclePlayerPosition",
                     "type": "Button",
                     "id": "1f64aebb-d551-4e17-adf6-cc18600ed5e9",
@@ -1142,7 +1151,7 @@
                 {
                     "name": "negative",
                     "id": "e3f4e178-f3aa-453e-a6b2-fd4d9cd2e129",
-                    "path": "<Keyboard>/numpadMultiply",
+                    "path": "<Keyboard>/numpad4",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1153,11 +1162,44 @@
                 {
                     "name": "positive",
                     "id": "506cb3fa-4dfe-45be-b229-5aee92dcb88c",
-                    "path": "<Keyboard>/numpadMinus",
+                    "path": "<Keyboard>/numpad6",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Aim",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "a6c54165-dc6d-46d1-8a66-ae02db1fcf59",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "VerticalAim",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "c2c3b9ab-2acd-4721-a829-7e7793f6bb91",
+                    "path": "<Keyboard>/numpad8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "VerticalAim",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "8a240304-1d6c-46c6-94e0-9d25f8e8f146",
+                    "path": "<Keyboard>/numpad2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "VerticalAim",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },

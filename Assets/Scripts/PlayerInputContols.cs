@@ -835,6 +835,15 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""VerticalAim"",
+                    ""type"": ""Button"",
+                    ""id"": ""61e7a8d9-3629-474f-8261-27a5682060b1"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""CyclePlayerPosition"",
                     ""type"": ""Button"",
                     ""id"": ""1f64aebb-d551-4e17-adf6-cc18600ed5e9"",
@@ -1165,7 +1174,7 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""negative"",
                     ""id"": ""e3f4e178-f3aa-453e-a6b2-fd4d9cd2e129"",
-                    ""path"": ""<Keyboard>/numpadMultiply"",
+                    ""path"": ""<Keyboard>/numpad4"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -1176,11 +1185,44 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""positive"",
                     ""id"": ""506cb3fa-4dfe-45be-b229-5aee92dcb88c"",
-                    ""path"": ""<Keyboard>/numpadMinus"",
+                    ""path"": ""<Keyboard>/numpad6"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""a6c54165-dc6d-46d1-8a66-ae02db1fcf59"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""VerticalAim"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""c2c3b9ab-2acd-4721-a829-7e7793f6bb91"",
+                    ""path"": ""<Keyboard>/numpad8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""VerticalAim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""8a240304-1d6c-46c6-94e0-9d25f8e8f146"",
+                    ""path"": ""<Keyboard>/numpad2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""VerticalAim"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -1332,6 +1374,7 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
         m_Car_Fire = m_Car.FindAction("Fire", throwIfNotFound: true);
         m_Car_Reload = m_Car.FindAction("Reload", throwIfNotFound: true);
         m_Car_Aim = m_Car.FindAction("Aim", throwIfNotFound: true);
+        m_Car_VerticalAim = m_Car.FindAction("VerticalAim", throwIfNotFound: true);
         m_Car_CyclePlayerPosition = m_Car.FindAction("CyclePlayerPosition", throwIfNotFound: true);
         m_Car_ToggleAI = m_Car.FindAction("ToggleAI", throwIfNotFound: true);
         // XRController
@@ -1713,6 +1756,7 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
     private readonly InputAction m_Car_Fire;
     private readonly InputAction m_Car_Reload;
     private readonly InputAction m_Car_Aim;
+    private readonly InputAction m_Car_VerticalAim;
     private readonly InputAction m_Car_CyclePlayerPosition;
     private readonly InputAction m_Car_ToggleAI;
     public struct CarActions
@@ -1725,6 +1769,7 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
         public InputAction @Fire => m_Wrapper.m_Car_Fire;
         public InputAction @Reload => m_Wrapper.m_Car_Reload;
         public InputAction @Aim => m_Wrapper.m_Car_Aim;
+        public InputAction @VerticalAim => m_Wrapper.m_Car_VerticalAim;
         public InputAction @CyclePlayerPosition => m_Wrapper.m_Car_CyclePlayerPosition;
         public InputAction @ToggleAI => m_Wrapper.m_Car_ToggleAI;
         public InputActionMap Get() { return m_Wrapper.m_Car; }
@@ -1754,6 +1799,9 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
             @Aim.started += instance.OnAim;
             @Aim.performed += instance.OnAim;
             @Aim.canceled += instance.OnAim;
+            @VerticalAim.started += instance.OnVerticalAim;
+            @VerticalAim.performed += instance.OnVerticalAim;
+            @VerticalAim.canceled += instance.OnVerticalAim;
             @CyclePlayerPosition.started += instance.OnCyclePlayerPosition;
             @CyclePlayerPosition.performed += instance.OnCyclePlayerPosition;
             @CyclePlayerPosition.canceled += instance.OnCyclePlayerPosition;
@@ -1782,6 +1830,9 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
             @Aim.started -= instance.OnAim;
             @Aim.performed -= instance.OnAim;
             @Aim.canceled -= instance.OnAim;
+            @VerticalAim.started -= instance.OnVerticalAim;
+            @VerticalAim.performed -= instance.OnVerticalAim;
+            @VerticalAim.canceled -= instance.OnVerticalAim;
             @CyclePlayerPosition.started -= instance.OnCyclePlayerPosition;
             @CyclePlayerPosition.performed -= instance.OnCyclePlayerPosition;
             @CyclePlayerPosition.canceled -= instance.OnCyclePlayerPosition;
@@ -1901,6 +1952,7 @@ public partial class @PlayerInputContols: IInputActionCollection2, IDisposable
         void OnFire(InputAction.CallbackContext context);
         void OnReload(InputAction.CallbackContext context);
         void OnAim(InputAction.CallbackContext context);
+        void OnVerticalAim(InputAction.CallbackContext context);
         void OnCyclePlayerPosition(InputAction.CallbackContext context);
         void OnToggleAI(InputAction.CallbackContext context);
     }

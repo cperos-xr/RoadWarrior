@@ -22,7 +22,8 @@ public class WeaponFire : MonoBehaviour
     public ParticleSystem muzzleFlash;
     public ParticleSystem bulletshell;
 
-    public float rotationValue;
+    public float horizontalRotationValue;
+    public float verticalRotationValue;
     public float rotationSpeed;
 
     public Vector2 thumbstickInput;
@@ -62,37 +63,44 @@ public class WeaponFire : MonoBehaviour
     private void OnThumbstickRelease(InputAction.CallbackContext context)
     {
         thumbstickInput = Vector2.zero;
-        RotateTurret(thumbstickInput.x);
+        RotateTurretHorizontally(thumbstickInput.x);
+        RotateTurretVertically(thumbstickInput.y);
     }
 
     private void OnThumbstickMove(InputAction.CallbackContext context)
     {
         thumbstickInput = context.ReadValue<Vector2>();
-        RotateTurret(thumbstickInput.x);
+        RotateTurretHorizontally(thumbstickInput.x);
+        RotateTurretVertically(thumbstickInput.y);
     }
 
-    private void RotateTurret(float value)
+    private void RotateTurretHorizontally(float value)
     {
-        rotationValue = value;
+        horizontalRotationValue = value;
+    }
+
+    private void RotateTurretVertically(float value)
+    {
+        verticalRotationValue = value;
     }
 
     private void RotateTurret(InputAction.CallbackContext value)
     {
-        rotationValue = value.ReadValue<float>();
+        horizontalRotationValue = value.ReadValue<float>();
     }
 
     private void StopRotation(InputAction.CallbackContext value)
     {
-        rotationValue = 0;
+        horizontalRotationValue = 0;
     }
 
     private void RotateWeaponTurret()
     {
         // Calculate the new rotation amount based on the input and rotation speed
-        float rotationAmount = rotationValue * rotationSpeed * Time.deltaTime;
-
+        float horizontalRotationAmount = horizontalRotationValue * rotationSpeed * Time.deltaTime;
+        float verticalRotationAmount = verticalRotationValue * rotationSpeed * Time.deltaTime;
         // Apply the rotation to the turret
-        weaponTurret.Rotate(0, rotationAmount, 0);
+        weaponTurret.Rotate(verticalRotationAmount, horizontalRotationAmount, 0);
     }
 
     private void OnPrimaryWeaponSelected(Weapon primaryWeapon)
